@@ -1,0 +1,113 @@
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(18px, 2vw, 28px);
+}
+
+.team-card__media {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--r-lg);
+  background: var(--sand);
+}
+
+.team-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
+  filter: saturate(0.94);
+  transition:
+    transform 1s var(--ease),
+    filter 0.5s var(--ease);
+}
+
+.team-card:hover .team-card__media img {
+  transform: scale(1.035);
+  filter: saturate(1);
+}
+
+.team-card__links {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: flex;
+  gap: 0.45rem;
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 0.35s var(--ease),
+    transform 0.35s var(--ease);
+}
+
+.team-card:hover .team-card__links,
+.team-card:focus-within .team-card__links {
+  opacity: 1;
+  transform: none;
+}
+
+.team-card__links a {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--navy);
+  transition:
+    background-color 0.3s var(--ease),
+    color 0.3s var(--ease);
+}
+
+.team-card__links a:hover {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.team-card__body {
+  padding-top: 1rem;
+}
+
+.team-card__name {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.team-card__role {
+  margin-top: 0.3rem;
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--champagne);
+}
+
+.team__foot {
+  margin-top: clamp(28px, 3vw, 40px);
+}
+
+@media (hover: none) {
+  .team-card__links {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .team__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .team__grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .team-card__media {
+    aspect-ratio: 4 / 4.4;
+  }
+}
