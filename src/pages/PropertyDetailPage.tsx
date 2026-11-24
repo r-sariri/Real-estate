@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { getAgent } from '../data/agents';
-import { formatPrice, locationLabel } from '../data/properties';
+import { PROPERTY_TYPE_LABELS, formatPrice, locationLabel } from '../data/properties';
 import { listSimilar } from '../data/repository';
 import type { InquiryMode, Property } from '../data/types';
 import { useProperty } from '../hooks/useProperties';
@@ -36,7 +36,7 @@ export function PropertyDetailPage() {
   }, [slug]);
 
   useEffect(() => {
-    if (property) document.title = `${property.name} — Horizon Properties`;
+    if (property) document.title = `${property.name} — املاک افق`;
   }, [property]);
 
   if (loading) {
@@ -54,23 +54,29 @@ export function PropertyDetailPage() {
 
   const agent = getAgent(property.agentId);
   const saved = isFavorite(property.slug);
-  const listed = new Date(property.listedAt).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+  const listedDate = new Date(property.listedAt);
+  const listed = `${listedDate.toLocaleDateString('fa-IR', { month: 'long' })} ${listedDate.toLocaleDateString('fa-IR', { year: 'numeric' })}`;
+  const typeLabel = PROPERTY_TYPE_LABELS[property.type];
 
   const specs = [
-    { icon: 'bed' as const, value: `${property.beds}`, label: 'Bedrooms' },
-    { icon: 'bath' as const, value: `${property.baths}`, label: 'Bathrooms' },
-    { icon: 'area' as const, value: property.sqft.toLocaleString('en-US'), label: 'Square feet' },
-    { icon: 'home' as const, value: property.lot, label: 'Lot size' },
+    { icon: 'bed' as const, value: property.beds.toLocaleString('fa-IR'), label: 'اتاق خواب' },
+    { icon: 'bath' as const, value: property.baths.toLocaleString('fa-IR'), label: 'سرویس بهداشتی' },
+    {
+      icon: 'area' as const,
+      value: Math.round(property.sqft * 0.092903).toLocaleString('fa-IR'),
+      label: 'متر مربع',
+    },
+    { icon: 'home' as const, value: property.lot, label: 'مساحت زمین' },
   ];
 
   return (
     <div className="detail-page">
       <header className="detail-hero">
         <div className="container">
-          <nav className="breadcrumb" aria-label="Breadcrumb">
-            <Link to="/">Home</Link>
+          <nav className="breadcrumb" aria-label="مسیر صفحه">
+            <Link to="/">خانه</Link>
             <span aria-hidden="true">/</span>
-            <Link to="/properties">Properties</Link>
+            <Link to="/properties">املاک</Link>
             <span aria-hidden="true">/</span>
             <span aria-current="page">{property.name}</span>
           </nav>
@@ -78,7 +84,7 @@ export function PropertyDetailPage() {
           <div className="detail-hero__row">
             <div className="detail-hero__main">
               <span className="detail-hero__type">
-                {property.type} · For Sale
+                {typeLabel} · آماده فروش
               </span>
               <h1 className="detail-hero__title">{property.name}</h1>
               <p className="detail-hero__loc">
@@ -95,7 +101,7 @@ export function PropertyDetailPage() {
                 onClick={() => toggle(property.slug)}
               >
                 <Icon name="heart" size={16} strokeWidth={1.6} />
-                {saved ? 'Saved' : 'Save'}
+                {saved ? 'ذخیره‌شده' : 'ذخیره'}
               </button>
             </div>
           </div>
@@ -122,10 +128,10 @@ export function PropertyDetailPage() {
 
           <section className="detail-section" aria-labelledby="about-property">
             <h2 id="about-property" className="detail-section__title">
-              About this property
+              درباره این ملک
             </h2>
             <p className="detail-meta">
-              Built {property.year} · Listed {listed} · {property.type}
+              ساخت {property.year.toLocaleString('fa-IR', { useGrouping: false })} · فهرست‌شده {listed} · {typeLabel}
             </p>
             <div className="detail-copy">
               {property.description.map((paragraph) => (
@@ -136,7 +142,7 @@ export function PropertyDetailPage() {
 
           <section className="detail-section" aria-labelledby="key-features">
             <h2 id="key-features" className="detail-section__title">
-              Key features
+              ویژگی‌های کلیدی
             </h2>
             <ul className="detail-features">
               {property.highlights.map((feature) => (
@@ -150,7 +156,7 @@ export function PropertyDetailPage() {
 
           <section className="detail-section" aria-labelledby="amenities">
             <h2 id="amenities" className="detail-section__title">
-              Amenities
+              امکانات
             </h2>
             <ul className="detail-amenities">
               {property.amenities.map((amenity) => (
@@ -161,7 +167,7 @@ export function PropertyDetailPage() {
 
           <section className="detail-section" aria-labelledby="neighbourhood">
             <h2 id="neighbourhood" className="detail-section__title">
-              The neighbourhood
+              محله
             </h2>
             <p className="detail-copy">{property.neighborhood.intro}</p>
             <dl className="detail-nearby">
@@ -177,10 +183,10 @@ export function PropertyDetailPage() {
 
         <aside className="detail-aside">
           <div className="agent-card">
-            <p className="agent-card__eyebrow">Listing advisor</p>
+            <p className="agent-card__eyebrow">مشاور این ملک</p>
             <div className="agent-card__head">
               <span className="agent-card__avatar">
-                <Img id={agent.photoId} alt={`Portrait of ${agent.name}`} sizes="64px" widths={[120, 240]} />
+                <Img id={agent.photoId} alt={`پرتره ${agent.name}`} sizes="64px" widths={[120, 240]} />
               </span>
               <div>
                 <h2 className="agent-card__name">{agent.name}</h2>
@@ -190,21 +196,21 @@ export function PropertyDetailPage() {
             <p className="agent-card__focus">{agent.focus}</p>
             <a className="agent-card__line" href={`tel:${agent.phone.replace(/[^\d]/g, '')}`}>
               <Icon name="phone" size={15} strokeWidth={1.6} />
-              {agent.phone}
+              <span dir="ltr">{agent.phone}</span>
             </a>
             <a className="agent-card__line" href={`mailto:${agent.email}`}>
               <Icon name="mail" size={15} strokeWidth={1.6} />
-              {agent.email}
+              <span dir="ltr">{agent.email}</span>
             </a>
             <Button block onClick={() => setInquiry('contact')}>
-              Contact Agent
+              تماس با مشاور
             </Button>
             <Button block variant="outline" onClick={() => setInquiry('viewing')}>
-              Schedule a Viewing
+              تعیین وقت بازدید
             </Button>
             <p className="agent-card__note">
               <Icon name="clock" size={14} strokeWidth={1.6} />
-              Typically responds within 2 hours
+              معمولاً تا ۲ ساعت پاسخ می‌دهد
             </p>
           </div>
         </aside>
@@ -214,9 +220,9 @@ export function PropertyDetailPage() {
         <section className="section section--tight detail-similar" aria-labelledby="similar-title">
           <div className="container">
             <div className="section-head">
-              <span className="eyebrow">Continue exploring</span>
+              <span className="eyebrow">ادامه کاوش</span>
               <h2 id="similar-title" className="section-title">
-                Similar properties
+                املاک مشابه
               </h2>
             </div>
             <div className="properties-grid">
@@ -232,11 +238,11 @@ export function PropertyDetailPage() {
 
       <div className="detail-mobile-cta">
         <div className="detail-mobile-cta__price">
-          <span>{property.type}</span>
+          <span>{typeLabel}</span>
           <strong>{formatPrice(property.price)}</strong>
         </div>
         <Button variant="primary" size="sm" onClick={() => setInquiry('viewing')}>
-          Schedule Viewing
+          رزرو بازدید
         </Button>
       </div>
 

@@ -1,0 +1,142 @@
+/* ==========================================================================
+   Horizon Properties — Persian (fa) typography and right-to-left layout.
+   Loaded after the component styles so these overrides win.
+   ========================================================================== */
+
+/* Self-hosted Vazirmatn (variable, 100–900) — no external CDN. */
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('/fonts/vazirmatn-var.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-sans: 'Vazirmatn', 'IRANSansX', 'IRANSans', Tahoma, 'Segoe UI', system-ui, sans-serif;
+  --font-serif: 'Vazirmatn', 'IRANSansX', Tahoma, 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+  font-feature-settings: normal;
+}
+
+/* Arabic script takes no tracking — the Latin design's spacing breaks the
+   cursive joins and reads as broken words. */
+[dir='rtl'] * {
+  letter-spacing: normal !important;
+}
+
+/* Persian ascenders and descenders need looser leading than the Latin design. */
+[dir='rtl'] h1,
+[dir='rtl'] h2,
+[dir='rtl'] h3,
+[dir='rtl'] h4,
+[dir='rtl'] h5 {
+  line-height: 1.36;
+}
+
+[dir='rtl'] .hero__title,
+[dir='rtl'] .page-hero__title {
+  line-height: 1.24;
+}
+
+[dir='rtl'] .why__title em,
+[dir='rtl'] .why__quote {
+  font-style: normal;
+}
+
+/* Icons that carry direction are mirrored for RTL reading. */
+[dir='rtl'] svg[data-icon='arrow-right'],
+[dir='rtl'] svg[data-icon='arrow-left'],
+[dir='rtl'] svg[data-icon='arrow-up-right'] {
+  transform: scaleX(-1);
+}
+
+[dir='rtl'] .btn:hover svg,
+[dir='rtl'] .link-arrow:hover svg {
+  transform: none;
+  translate: -3px 0;
+}
+
+[dir='rtl'] .btn svg[data-icon='arrow-right'],
+[dir='rtl'] .link-arrow svg[data-icon='arrow-right'],
+[dir='rtl'] .btn svg[data-icon='arrow-up-right'] {
+  transform: scaleX(-1);
+}
+
+/* Directional offsets that were written for a left-to-right page. */
+[dir='rtl'] .skip-link {
+  left: auto;
+  right: 16px;
+}
+
+[dir='rtl'] .site-nav__link::after {
+  transform-origin: right;
+}
+
+[dir='rtl'] .nav-toggle {
+  margin-right: 0;
+  margin-left: -10px;
+}
+
+[dir='rtl'] .select {
+  padding-right: 1rem;
+  padding-left: 2.4rem;
+  background-position: left 1rem center;
+}
+
+[dir='rtl'] .why__quote {
+  padding-left: 0;
+  padding-right: 1.25rem;
+  border-left: 0;
+  border-right: 1px solid var(--champagne);
+}
+
+[dir='rtl'] .cta-banner__button {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+[dir='rtl'] .about__badge {
+  left: auto;
+  right: calc(61% - 28px);
+}
+
+[dir='rtl'] .team-card__links {
+  right: auto;
+  left: 12px;
+}
+
+[dir='rtl'] .p-gallery__pill {
+  right: auto;
+  left: 14px;
+}
+
+[dir='rtl'] .p-gallery__more {
+  right: auto;
+  left: 12px;
+}
+
+[dir='rtl'] .modal__close {
+  right: auto;
+  left: 14px;
+}
+
+[dir='rtl'] .p-carousel__hint {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+@media (max-width: 820px) {
+  [dir='rtl'] .cta-banner__button {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  [dir='rtl'] .about__badge {
+    right: auto;
+    left: 20px;
+  }
+}

@@ -1,10 +1,10 @@
 export const NAV_ITEMS = [
-  { label: 'Home', to: '/' },
-  { label: 'Properties', to: '/properties' },
-  { label: 'About Us', to: '/about' },
-  { label: 'Services', to: '/services' },
-  { label: 'Team', to: '/team' },
-  { label: 'Contact', to: '/contact' },
+  { label: 'خانه', to: '/' },
+  { label: 'املاک', to: '/properties' },
+  { label: 'درباره ما', to: '/about' },
+  { label: 'خدمات', to: '/services' },
+  { label: 'تیم', to: '/team' },
+  { label: 'تماس', to: '/contact' },
 ] as const;
 
 export const CONTACT = {
@@ -12,6 +12,6 @@ export const CONTACT = {
   phoneHref: 'tel:+15552467890',
   email: 'hello@horizonproperties.com',
   emailHref: 'mailto:hello@horizonproperties.com',
-  address: ['1420 Westlake Drive, Suite 400', 'Austin, TX 78746'],
-  hours: 'Mon – Fri, 9:00 – 18:00',
+  address: ['خیابان وست‌لیک ۱۴۲۰، واحد ۴۰۰', 'آستین، تگزاس ۷۸۷۴۶'],
+  hours: 'دوشنبه تا جمعه، ۹:۰۰ تا ۱۸:۰۰',
 };

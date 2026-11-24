@@ -7,20 +7,20 @@ export function NotFound() {
     <section className="not-found">
       <div className="container not-found__inner">
         <span className="eyebrow">404</span>
-        <h1 className="not-found__title">This address is off the market.</h1>
+        <h1 className="not-found__title">این نشانی از بازار خارج شده است.</h1>
         <p className="not-found__text">
-          The page you were looking for has moved or no longer exists. Let us point you back to the collection.
+          صفحه‌ای که دنبالش بودید جابه‌جا شده یا دیگر وجود ندارد. بگذارید شما را به مجموعه برگردانیم.
         </p>
         <div className="not-found__actions">
           <Button to="/properties" variant="primary">
-            Browse Properties
+            مشاهده املاک
           </Button>
           <Button to="/" variant="outline" icon={null}>
-            Return Home
+            بازگشت به خانه
           </Button>
         </div>
         <Link to="/contact" className="link-arrow not-found__link">
-          Contact an advisor
+          تماس با مشاور
           <Icon name="arrow-right" size={15} />
         </Link>
       </div>

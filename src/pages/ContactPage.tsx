@@ -8,30 +8,29 @@ export function ContactPage() {
   return (
     <>
       <PageHero
-        eyebrow="Contact"
-        title="Let’s start a conversation"
-        lede="Whether you are buying, selling or simply weighing up the market, an advisor will respond personally within one business day."
+        eyebrow="تماس"
+        title="گفت‌وگو را شروع کنیم"
+        lede="چه در حال خرید باشید، چه فروش یا فقط سنجش بازار، یک مشاور حداکثر تا یک روز کاری شخصاً پاسخ می‌دهد."
         imageId="1600607688960-e095ff83135c"
-        imageAlt="Quiet interior with natural light and architectural detailing"
+        imageAlt="فضای داخلی آرام با نور طبیعی و جزئیات معماری"
       />
 
       <section className="section contact" aria-labelledby="contact-title">
         <div className="container contact__grid">
           <div className="contact__form">
-            <span className="eyebrow">Enquiry</span>
+            <span className="eyebrow">درخواست</span>
             <h2 id="contact-title" className="section-title contact__title">
-              Tell us what you have in mind
+              بگویید در ذهن چه دارید
             </h2>
             <p className="section-lede">
-              A few details are enough to start. If you already have a property in mind, mention it — we will do the
-              rest.
+              چند جزئیات برای شروع کافی است. اگر ملکی در ذهن دارید، نامش را بگویید — بقیه‌اش با ما.
             </p>
-            <InquiryForm mode="contact" submitLabel="Send Enquiry" />
+            <InquiryForm mode="contact" submitLabel="ارسال درخواست" />
           </div>
 
           <aside className="contact__aside">
             <div className="contact-card">
-              <h3 className="contact-card__title">Office</h3>
+              <h3 className="contact-card__title">دفتر</h3>
               <address className="contact-card__address">
                 {CONTACT.address[0]}
                 <br />
@@ -47,32 +46,32 @@ export function ContactPage() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Get directions
+                مسیریابی
                 <Icon name="arrow-up-right" size={14} />
               </a>
             </div>
 
             <div className="contact-card contact-card--navy">
-              <h3 className="contact-card__title">Direct</h3>
+              <h3 className="contact-card__title">تماس مستقیم</h3>
               <a className="contact-card__line" href={CONTACT.phoneHref}>
                 <Icon name="phone" size={16} strokeWidth={1.6} />
-                {CONTACT.phone}
+                <span dir="ltr">{CONTACT.phone}</span>
               </a>
               <a className="contact-card__line" href={CONTACT.emailHref}>
                 <Icon name="mail" size={16} strokeWidth={1.6} />
-                {CONTACT.email}
+                <span dir="ltr">{CONTACT.email}</span>
               </a>
               <p className="contact-card__note">
                 <Icon name="clock" size={14} strokeWidth={1.6} />
-                Typically responds within 2 hours during office hours.
+                در ساعات کاری معمولاً تا ۲ ساعت پاسخ می‌دهیم.
               </p>
             </div>
 
             <div className="contact-card contact-card--quote">
               <p className="contact-card__quote">
-                “The right home is rarely the first one you see. It is the one you keep thinking about.”
+                «خانه درست به‌ندرت نخستین خانه‌ای است که می‌بینید. همان است که مدام به آن فکر می‌کنید.»
               </p>
-              <p className="contact-card__attribution">Daniel Morgan · Managing Director</p>
+              <p className="contact-card__attribution">دانیل مورگان · مدیرعامل</p>
             </div>
           </aside>
         </div>

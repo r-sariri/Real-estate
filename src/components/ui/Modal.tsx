@@ -63,7 +63,7 @@ export function Modal({ open, onClose, labelledBy, children }: ModalProps) {
       }}
     >
       <div className="modal__panel" role="dialog" aria-modal="true" aria-labelledby={labelledBy} ref={panelRef}>
-        <button ref={closeRef} type="button" className="modal__close" onClick={onClose} aria-label="Close dialog">
+        <button ref={closeRef} type="button" className="modal__close" onClick={onClose} aria-label="بستن پنجره">
           <Icon name="close" size={18} />
         </button>
         {children}

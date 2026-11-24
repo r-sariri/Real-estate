@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Icon } from '../ui/Icon';
-import { locations, propertyTypes } from '../../data/properties';
+import { PROPERTY_TYPE_LABELS, locations, propertyTypes } from '../../data/properties';
 import './PropertyFilters.css';
 
 export type FilterState = {
@@ -43,11 +43,11 @@ export function PropertyFilters({ value, onChange }: PropertyFiltersProps) {
       <div className="filters__top">
         <label className="filters__search">
           <Icon name="search" size={18} strokeWidth={1.6} />
-          <span className="sr-only">Search properties</span>
+          <span className="sr-only">جستجوی املاک</span>
           <input
             type="search"
             value={value.q}
-            placeholder="Search by name, city or feature"
+            placeholder="جستجو بر اساس نام، شهر یا ویژگی"
             onChange={(event) => onChange('q', event.target.value)}
           />
         </label>
@@ -59,14 +59,14 @@ export function PropertyFilters({ value, onChange }: PropertyFiltersProps) {
           onClick={() => setOpen((current) => !current)}
         >
           <Icon name="sliders" size={17} strokeWidth={1.6} />
-          Filters
+          فیلترها
         </button>
       </div>
 
       <div id="filters-body" className={`filters__body${open ? ' is-open' : ''}`}>
         <div className="field filters__field">
           <label className="field__label" htmlFor="filter-location">
-            Location
+            موقعیت
           </label>
           <select
             id="filter-location"
@@ -74,7 +74,7 @@ export function PropertyFilters({ value, onChange }: PropertyFiltersProps) {
             value={value.location}
             onChange={(event) => onChange('location', event.target.value)}
           >
-            <option value="all">All locations</option>
+            <option value="all">همه موقعیت‌ها</option>
             {locations.map((location) => (
               <option key={location} value={location}>
                 {location}
@@ -85,7 +85,7 @@ export function PropertyFilters({ value, onChange }: PropertyFiltersProps) {
 
         <div className="field filters__field">
           <label className="field__label" htmlFor="filter-type">
-            Property type
+            نوع ملک
           </label>
           <select
             id="filter-type"
@@ -93,10 +93,10 @@ export function PropertyFilters({ value, onChange }: PropertyFiltersProps) {
             value={value.type}
             onChange={(event) => onChange('type', event.target.value)}
           >
-            <option value="all">All types</option>
+            <option value="all">همه انواع</option>
             {propertyTypes.map((type) => (
               <option key={type} value={type}>
-                {type}
+                {PROPERTY_TYPE_LABELS[type]}
               </option>
             ))}
           </select>
@@ -104,7 +104,7 @@ export function PropertyFilters({ value, onChange }: PropertyFiltersProps) {
 
         <div className="field filters__field">
           <label className="field__label" htmlFor="filter-price">
-            Price
+            قیمت
           </label>
           <select
             id="filter-price"
@@ -112,17 +112,17 @@ export function PropertyFilters({ value, onChange }: PropertyFiltersProps) {
             value={value.price}
             onChange={(event) => onChange('price', event.target.value)}
           >
-            <option value="all">Any price</option>
-            <option value="under-2">Under $2M</option>
-            <option value="2-4">$2M – $4M</option>
-            <option value="4-6">$4M – $6M</option>
-            <option value="6-plus">$6M+</option>
+            <option value="all">هر قیمتی</option>
+            <option value="under-2">کمتر از ۲ میلیون دلار</option>
+            <option value="2-4">۲ تا ۴ میلیون دلار</option>
+            <option value="4-6">۴ تا ۶ میلیون دلار</option>
+            <option value="6-plus">بیش از ۶ میلیون دلار</option>
           </select>
         </div>
 
         <div className="field filters__field">
           <label className="field__label" htmlFor="filter-beds">
-            Bedrooms
+            اتاق خواب
           </label>
           <select
             id="filter-beds"
@@ -130,7 +130,7 @@ export function PropertyFilters({ value, onChange }: PropertyFiltersProps) {
             value={value.beds}
             onChange={(event) => onChange('beds', event.target.value)}
           >
-            <option value="all">Any</option>
+            <option value="all">همه</option>
             <option value="3">3+</option>
             <option value="4">4+</option>
             <option value="5">5+</option>
@@ -140,7 +140,7 @@ export function PropertyFilters({ value, onChange }: PropertyFiltersProps) {
 
         <div className="field filters__field">
           <label className="field__label" htmlFor="filter-baths">
-            Bathrooms
+            سرویس بهداشتی
           </label>
           <select
             id="filter-baths"
@@ -148,7 +148,7 @@ export function PropertyFilters({ value, onChange }: PropertyFiltersProps) {
             value={value.baths}
             onChange={(event) => onChange('baths', event.target.value)}
           >
-            <option value="all">Any</option>
+            <option value="all">همه</option>
             <option value="3">3+</option>
             <option value="4">4+</option>
             <option value="5">5+</option>
@@ -158,7 +158,7 @@ export function PropertyFilters({ value, onChange }: PropertyFiltersProps) {
 
         <div className="field filters__field">
           <label className="field__label" htmlFor="filter-sort">
-            Sort by
+            مرتب‌سازی
           </label>
           <select
             id="filter-sort"
@@ -166,11 +166,11 @@ export function PropertyFilters({ value, onChange }: PropertyFiltersProps) {
             value={value.sort}
             onChange={(event) => onChange('sort', event.target.value)}
           >
-            <option value="featured">Featured</option>
-            <option value="price-desc">Price: high to low</option>
-            <option value="price-asc">Price: low to high</option>
-            <option value="size-desc">Largest first</option>
-            <option value="newest">Newest first</option>
+            <option value="featured">منتخب</option>
+            <option value="price-desc">قیمت: زیاد به کم</option>
+            <option value="price-asc">قیمت: کم به زیاد</option>
+            <option value="size-desc">بزرگ‌ترین اول</option>
+            <option value="newest">جدیدترین اول</option>
           </select>
         </div>
       </div>

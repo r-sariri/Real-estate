@@ -6,11 +6,11 @@ export function TeamPage() {
   return (
     <>
       <PageHero
-        eyebrow="Our People"
-        title="Advisors, not agents"
-        lede="Small by design. Every client works directly with a senior advisor who knows the market, the property and the people involved."
+        eyebrow="آدم‌های ما"
+        title="مشاور، نه واسطه"
+        lede="کوچک، به‌عمد. هر مشتری مستقیماً با یک مشاور ارشد کار می‌کند که بازار، ملک و آدم‌های درگیر را می‌شناسد."
         imageId="1512918728675-ed5a9ecdebfd"
-        imageAlt="Sunlit living space opening onto a terrace"
+        imageAlt="فضای نشیمن آفتاب‌گرفته رو به تراس"
       />
       <TeamSection showFooterLink={false} />
       <CtaBanner />

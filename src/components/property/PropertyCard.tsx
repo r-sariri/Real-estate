@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Icon } from '../ui/Icon';
 import { Img } from '../ui/Img';
-import { formatPrice, locationLabel } from '../../data/properties';
+import { PROPERTY_TYPE_LABELS, formatPrice, locationLabel } from '../../data/properties';
 import { useFavorites } from '../../store/FavoritesContext';
 import type { Property } from '../../data/types';
 import './PropertyCard.css';
@@ -37,12 +37,12 @@ export function PropertyCard({ property, variant = 'grid', lead = false, priorit
       <span className="p-card__scrim" aria-hidden="true" />
 
       <div className="p-card__top">
-        <span className="p-card__type">{property.type}</span>
+        <span className="p-card__type">{PROPERTY_TYPE_LABELS[property.type]}</span>
         <button
           type="button"
           className={`p-card__fav${saved ? ' is-saved' : ''}`}
           aria-pressed={saved}
-          aria-label={saved ? `Remove ${property.name} from saved properties` : `Save ${property.name}`}
+          aria-label={saved ? `حذف ${property.name} از املاک ذخیره‌شده` : `ذخیره ${property.name}`}
           onClick={() => toggle(property.slug)}
         >
           <Icon name="heart" size={17} strokeWidth={1.6} />
@@ -54,7 +54,7 @@ export function PropertyCard({ property, variant = 'grid', lead = false, priorit
           <h3 className="p-card__name">{property.name}</h3>
           <p className="p-card__loc">
             <Icon name="pin" size={13} strokeWidth={1.6} />
-            {property.city}, {property.region}
+            {property.city}، {property.region}
           </p>
         </div>
         <span className="p-card__price">{formatPrice(property.price)}</span>
@@ -62,7 +62,7 @@ export function PropertyCard({ property, variant = 'grid', lead = false, priorit
 
       <Link to={`/properties/${property.slug}`} className="p-card__link">
         <span className="sr-only">
-          View {property.name} in {locationLabel(property)}
+          مشاهده {property.name} در {locationLabel(property)}
         </span>
       </Link>
     </article>

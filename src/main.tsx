@@ -1,11 +1,8 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import '@fontsource-variable/inter';
-import '@fontsource/playfair-display/400.css';
-import '@fontsource/playfair-display/400-italic.css';
-import '@fontsource/playfair-display/500.css';
 import './styles/base.css';
 import App from './App';
+import './styles/rtl.css';
 
 const container = document.getElementById('root');
 

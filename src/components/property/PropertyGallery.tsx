@@ -22,7 +22,7 @@ export function PropertyGallery({ property }: { property: Property }) {
           type="button"
           className="p-gallery__main"
           onClick={() => openAt(0)}
-          aria-label={`Open photo gallery — ${images.length} photos of ${property.name}`}
+          aria-label={`باز کردن گالری تصاویر — ${images.length} تصویر از ${property.name}`}
         >
           <Img
             id={images[0].id}
@@ -33,7 +33,7 @@ export function PropertyGallery({ property }: { property: Property }) {
           />
           <span className="p-gallery__pill">
             <Icon name="search" size={14} strokeWidth={1.6} />
-            All {images.length} photos
+            همه {images.length} تصویر
           </span>
         </button>
 
@@ -44,10 +44,10 @@ export function PropertyGallery({ property }: { property: Property }) {
               type="button"
               className="p-gallery__thumb"
               onClick={() => openAt(itemIndex + 1)}
-              aria-label={`View photo ${itemIndex + 2} of ${images.length}`}
+              aria-label={`مشاهده تصویر ${itemIndex + 2} از ${images.length}`}
             >
               <Img id={image.id} alt={image.alt} sizes="(max-width: 760px) 46vw, 28vw" widths={[480, 768, 1080]} />
-              {itemIndex === 1 ? <span className="p-gallery__more">+{Math.max(images.length - 3, 0)} more</span> : null}
+              {itemIndex === 1 ? <span className="p-gallery__more">+{Math.max(images.length - 3, 0)} تصویر دیگر</span> : null}
             </button>
           ))}
         </div>

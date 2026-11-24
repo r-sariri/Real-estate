@@ -26,18 +26,18 @@ export function Footer() {
       <div className="container">
         <div className="site-footer__top">
           <div className="site-footer__brand">
-            <Link to="/" className="footer-brand" aria-label="Horizon Properties — home">
+            <Link to="/" className="footer-brand" aria-label="املاک افق — خانه">
               <span className="footer-brand__mark">
                 <LogoMark size={30} />
               </span>
               <span className="footer-brand__text">
-                <span className="footer-brand__name">Horizon</span>
-                <span className="footer-brand__sub">Properties</span>
+                <span className="footer-brand__name">افق</span>
+                <span className="footer-brand__sub">املاک</span>
               </span>
             </Link>
             <p className="site-footer__about">
-              A private real estate practice representing exceptional homes, considered investments and the
-              people who live in them.
+              دفتری خصوصی در حوزه املاک که خانه‌های شاخص، سرمایه‌گذاری‌های سنجیده و آدم‌هایی را که در آن‌ها زندگی
+              می‌کنند نمایندگی می‌کند.
             </p>
             <div className="site-footer__socials">
               <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noreferrer">
@@ -52,8 +52,8 @@ export function Footer() {
             </div>
           </div>
 
-          <nav className="site-footer__col" aria-label="Footer">
-            <h2 className="site-footer__heading">Explore</h2>
+          <nav className="site-footer__col" aria-label="پاورقی">
+            <h2 className="site-footer__heading">دسترسی سریع</h2>
             <ul className="site-footer__links">
               {NAV_ITEMS.map((item) => (
                 <li key={item.to}>
@@ -64,18 +64,18 @@ export function Footer() {
           </nav>
 
           <div className="site-footer__col">
-            <h2 className="site-footer__heading">Contact</h2>
+            <h2 className="site-footer__heading">تماس</h2>
             <ul className="site-footer__contact">
               <li>
                 <a href={CONTACT.phoneHref}>
                   <Icon name="phone" size={15} />
-                  {CONTACT.phone}
+                  <span dir="ltr">{CONTACT.phone}</span>
                 </a>
               </li>
               <li>
                 <a href={CONTACT.emailHref}>
                   <Icon name="mail" size={15} />
-                  {CONTACT.email}
+                  <span dir="ltr">{CONTACT.email}</span>
                 </a>
               </li>
               <li>
@@ -92,25 +92,25 @@ export function Footer() {
           </div>
 
           <div className="site-footer__col site-footer__news">
-            <h2 className="site-footer__heading">Newsletter</h2>
+            <h2 className="site-footer__heading">خبرنامه</h2>
             <p className="site-footer__news-text">
-              New listings and market notes, sent occasionally. No noise.
+              فهرست‌های تازه و یادداشت‌های بازار، گه‌گاه و بدون شلوغی.
             </p>
             {status === 'done' ? (
               <p className="site-footer__news-done" role="status">
-                <Icon name="check" size={16} /> You’re on the list.
+                <Icon name="check" size={16} /> ثبت شدید.
               </p>
             ) : (
               <form className="news-form" onSubmit={handleSubmit} noValidate>
                 <label className="sr-only" htmlFor="newsletter-email">
-                  Email address
+                  نشانی ایمیل
                 </label>
                 <input
                   id="newsletter-email"
                   className="news-form__input"
                   type="email"
                   name="email"
-                  placeholder="Your email address"
+                  placeholder="نشانی ایمیل شما"
                   value={email}
                   onChange={(event) => {
                     setEmail(event.target.value);
@@ -120,30 +120,30 @@ export function Footer() {
                   aria-describedby={status === 'error' ? 'newsletter-error' : undefined}
                   required
                 />
-                <button type="submit" className="news-form__button" aria-label="Subscribe" disabled={status === 'sending'}>
+                <button type="submit" className="news-form__button" aria-label="عضویت در خبرنامه" disabled={status === 'sending'}>
                   <Icon name="arrow-right" size={17} />
                 </button>
               </form>
             )}
             {status === 'error' ? (
               <p id="newsletter-error" className="news-form__error">
-                Please enter a valid email address.
+                لطفاً یک نشانی ایمیل معتبر وارد کنید.
               </p>
             ) : null}
           </div>
         </div>
 
         <div className="site-footer__bottom">
-          <p>© {new Date().getFullYear()} Horizon Properties. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} املاک افق. تمام حقوق محفوظ است.</p>
           <ul className="site-footer__legal">
             <li>
-              <Link to="/contact">Privacy</Link>
+              <Link to="/contact">حریم خصوصی</Link>
             </li>
             <li>
-              <Link to="/contact">Terms</Link>
+              <Link to="/contact">شرایط استفاده</Link>
             </li>
             <li>
-              <Link to="/contact">Fair Housing</Link>
+              <Link to="/contact">مسکن منصفانه</Link>
             </li>
           </ul>
         </div>

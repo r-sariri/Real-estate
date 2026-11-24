@@ -9,7 +9,9 @@ type PropertyCarouselProps = {
   label?: string;
 };
 
-export function PropertyCarousel({ properties, label = 'Featured properties' }: PropertyCarouselProps) {
+const isRtl = (el: HTMLElement) => getComputedStyle(el).direction === 'rtl';
+
+export function PropertyCarousel({ properties, label = 'املاک منتخب' }: PropertyCarouselProps) {
   const trackRef = useRef<HTMLDivElement>(null);
   const drag = useRef({ active: false, startX: 0, startScroll: 0, moved: false });
   const suppressClick = useRef(false);
@@ -23,11 +25,16 @@ export function PropertyCarousel({ properties, label = 'Featured properties' }: 
     const max = el.scrollWidth - el.clientWidth;
     if (max <= 4) return;
 
-    let next = el.scrollLeft + direction * step;
-    if (direction > 0 && el.scrollLeft >= max - 16) next = 0;
-    if (direction < 0 && el.scrollLeft <= 16) next = max;
+    // In RTL the scroll origin is the right edge and scrollLeft runs negative.
+    const rtl = isRtl(el);
+    const position = rtl ? -el.scrollLeft : el.scrollLeft;
 
-    el.scrollTo({ left: Math.max(0, Math.min(max, next)), behavior: 'smooth' });
+    let next = position + direction * step;
+    if (direction > 0 && position >= max - 16) next = 0;
+    if (direction < 0 && position <= 16) next = max;
+
+    next = Math.max(0, Math.min(max, next));
+    el.scrollTo({ left: rtl ? -next : next, behavior: 'smooth' });
   }, []);
 
   const onPointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
@@ -49,7 +56,7 @@ export function PropertyCarousel({ properties, label = 'Featured properties' }: 
     } catch {
       /* pointer may already be released */
     }
-    el.scrollLeft = drag.current.startScroll - dx;
+    el.scrollLeft = drag.current.startScroll + (isRtl(el) ? dx : -dx);
     event.preventDefault();
   };
 
@@ -61,12 +68,14 @@ export function PropertyCarousel({ properties, label = 'Featured properties' }: 
   };
 
   const onKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    const el = trackRef.current;
+    const rtl = el ? isRtl(el) : false;
     if (event.key === 'ArrowRight') {
       event.preventDefault();
-      scrollByPage(1);
+      scrollByPage(rtl ? -1 : 1);
     } else if (event.key === 'ArrowLeft') {
       event.preventDefault();
-      scrollByPage(-1);
+      scrollByPage(rtl ? 1 : -1);
     }
   };
 
@@ -116,13 +125,13 @@ export function PropertyCarousel({ properties, label = 'Featured properties' }: 
 
       <div className="p-carousel__bar">
         <span className="p-carousel__hint" aria-hidden="true">
-          Drag or swipe to explore
+          برای کاوش بکشید یا سوایپ کنید
         </span>
         <button
           type="button"
           className="p-carousel__nav"
           onClick={() => scrollByPage(-1)}
-          aria-label="Previous properties"
+          aria-label="املاک قبلی"
         >
           <Icon name="arrow-left" size={18} />
         </button>
@@ -130,7 +139,7 @@ export function PropertyCarousel({ properties, label = 'Featured properties' }: 
           type="button"
           className="p-carousel__nav"
           onClick={() => scrollByPage(1)}
-          aria-label="Next properties"
+          aria-label="املاک بعدی"
         >
           <Icon name="arrow-right" size={18} />
         </button>

@@ -4,24 +4,24 @@ import './WhyChoose.css';
 
 const reasons = [
   {
-    title: 'Advisory before listings',
-    text: 'We begin with the decision, not the inventory — valuation, financing and timing come first.',
+    title: 'مشاوره پیش از فهرست',
+    text: 'با تصمیم شروع می‌کنیم، نه با موجودی — ارزش‌گذاری، تأمین مالی و زمان‌بندی در اولویت‌اند.'
   },
   {
-    title: 'A private, curated network',
-    text: 'A meaningful share of the homes we represent are introduced before they reach the open market.',
+    title: 'شبکه‌ای خصوصی و گزیده',
+    text: 'بخش قابل‌توجهی از خانه‌هایی که نمایندگی می‌کنیم، پیش از ورود به بازار آزاد معرفی می‌شوند.'
   },
   {
-    title: 'One point of contact',
-    text: 'Your advisor stays with you from the first conversation to the keys — and long after.',
+    title: 'یک نقطه تماس',
+    text: 'مشاور شما از نخستین گفت‌وگو تا تحویل کلید — و سال‌ها پس از آن — همراهتان می‌ماند.'
   },
 ];
 
 const stats = [
-  { value: '18', label: 'Years of practice' },
-  { value: '$4.2B', label: 'Property transacted' },
-  { value: '480+', label: 'Homes placed' },
-  { value: '97%', label: 'Clients by referral' },
+  { value: '۱۸', label: 'سال تجربه' },
+  { value: '۴٫۲ میلیارد دلار', label: 'حجم معاملات ملکی' },
+  { value: '+۴۸۰', label: 'خانه واگذارشده' },
+  { value: '۹۷٪', label: 'مشتریان از طریق معرفی' },
 ];
 
 export function WhyChoose() {
@@ -32,20 +32,20 @@ export function WhyChoose() {
           <figure className="why__figure">
             <Img
               id="1613977257363-707ba9348227"
-              alt="Contemporary villa with a reflecting pool and mature landscaping"
+              alt="ویلای معاصر با استخر آینه‌ای و باغ کهن"
               sizes="(max-width: 900px) 92vw, 40vw"
             />
           </figure>
-          <figcaption className="why__caption">Lake Austin Residence · Completed 2021</figcaption>
+          <figcaption className="why__caption">اقامتگاه دریاچه آستین · تکمیل ۲۰۲۱</figcaption>
         </Reveal>
 
         <Reveal delay={120} className="why__copy">
-          <span className="eyebrow">Why Horizon</span>
+          <span className="eyebrow">چرا افق</span>
           <h2 id="why-title" className="section-title why__title">
-            Considered advice, <em>enduring value.</em>
+            مشاوره سنجیده، <em>ارزش پایدار.</em>
           </h2>
           <blockquote className="why__quote">
-            “We treat every home as an architectural legacy — and every client as a long-term partner.”
+            «با هر خانه مانند یک میراث معماری رفتار می‌کنیم — و با هر مشتری مانند یک شریک بلندمدت.»
           </blockquote>
           <ol className="why__list">
             {reasons.map((reason, index) => (

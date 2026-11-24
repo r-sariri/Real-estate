@@ -14,13 +14,13 @@ export function ServicesSection() {
       <div className="container services__grid">
         <div className="services__aside">
           <Reveal className="services__head">
-            <span className="eyebrow">Services</span>
+            <span className="eyebrow">خدمات</span>
             <h2 id="services-title" className="section-title">
-              Expertise across every detail
+              تخصص در تمام جزئیات
             </h2>
             <p className="section-lede">
-              From acquisition to the last piece of furniture, our practice covers the full arc of owning an
-              exceptional home — or building a portfolio of them.
+              از خرید تا آخرین تکه مبلمان، کار ما تمام مسیر داشتن یک خانه استثنایی را در بر می‌گیرد — یا ساختن
+              مجموعه‌ای از آن‌ها.
             </p>
           </Reveal>
 

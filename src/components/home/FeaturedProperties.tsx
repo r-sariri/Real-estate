@@ -15,9 +15,9 @@ export function FeaturedProperties() {
     <section className="section featured" aria-labelledby="featured-title">
       <div className="container">
         <div className="section-head section-head--center">
-          <span className="eyebrow">Featured</span>
+          <span className="eyebrow">منتخب</span>
           <h2 id="featured-title" className="section-title">
-            Featured Properties
+            املاک منتخب
           </h2>
         </div>
       </div>
@@ -34,7 +34,7 @@ export function FeaturedProperties() {
 
       <div className="container featured__foot">
         <Link to="/properties" className="link-arrow">
-          View all properties
+          مشاهده همه املاک
           <Icon name="arrow-right" size={15} />
         </Link>
       </div>

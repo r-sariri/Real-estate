@@ -6,16 +6,16 @@ import './pages.css';
 
 const steps = [
   {
-    title: 'A conversation',
-    text: 'We start with what you want the property to do for you — live, invest, or both.',
+    title: 'یک گفت‌وگو',
+    text: 'با این شروع می‌کنیم که می‌خواهید ملک چه کاری برای شما بکند — زندگی، سرمایه‌گذاری یا هر دو.',
   },
   {
-    title: 'Search and curation',
-    text: 'A shortlist built by hand, including homes that are not publicly listed.',
+    title: 'جستجو و انتخاب',
+    text: 'فهرستی دست‌چین، شامل خانه‌هایی که به‌صورت عمومی عرضه نشده‌اند.',
   },
   {
-    title: 'Closing and beyond',
-    text: 'Negotiation, due diligence and introductions long after the keys change hands.',
+    title: 'قرارداد و پس از آن',
+    text: 'مذاکره، بررسی‌های حقوقی و معرفی‌ها، سال‌ها پس از تحویل کلید.',
   },
 ];
 
@@ -23,20 +23,20 @@ export function ServicesPage() {
   return (
     <>
       <PageHero
-        eyebrow="Our Practice"
-        title="Advisory for every stage"
-        lede="Whether you are acquiring a first home or restructuring a portfolio, our services are designed to be used together — or precisely where you need them."
+        eyebrow="کار ما"
+        title="مشاوره در هر مرحله"
+        lede="چه نخستین خانه را می‌خرید و چه پرتفوی خود را بازآرایی می‌کنید، خدمات ما برای استفاده در کنار هم — یا دقیقاً همان‌جا که لازم دارید — طراحی شده‌اند."
         imageId="1600607687939-ce8a6c25118c"
-        imageAlt="Minimal interior with floor-to-ceiling windows"
+        imageAlt="فضای داخلی مینیمال با پنجره‌های سرتاسری"
       />
       <ServicesSection />
 
       <section className="section section--sand process" aria-labelledby="process-title">
         <div className="container">
           <div className="section-head">
-            <span className="eyebrow">How We Work</span>
+            <span className="eyebrow">شیوه کار ما</span>
             <h2 id="process-title" className="section-title">
-              Three steps, no surprises
+              سه قدم، بدون غافلگیری
             </h2>
           </div>
           <div className="process__grid">

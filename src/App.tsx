@@ -14,19 +14,19 @@ import { ContactPage } from './pages/ContactPage';
 import { NotFound } from './pages/NotFound';
 
 const TITLES: Record<string, string> = {
-  '/': 'Horizon Properties — Exceptional Homes & Investments',
-  '/properties': 'Properties — Horizon Properties',
-  '/about': 'About Us — Horizon Properties',
-  '/services': 'Services — Horizon Properties',
-  '/team': 'Our Team — Horizon Properties',
-  '/contact': 'Contact — Horizon Properties',
+  '/': 'املاک افق — خانه‌ها و سرمایه‌گذاری‌های شاخص',
+  '/properties': 'املاک — املاک افق',
+  '/about': 'درباره ما — املاک افق',
+  '/services': 'خدمات — املاک افق',
+  '/team': 'تیم ما — املاک افق',
+  '/contact': 'تماس — املاک افق',
 };
 
 function RouteMeta() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    document.title = TITLES[pathname] ?? 'Horizon Properties';
+    document.title = TITLES[pathname] ?? 'املاک افق';
   }, [pathname]);
 
   return null;
@@ -39,7 +39,7 @@ export default function App() {
         <ScrollToTop />
         <RouteMeta />
         <a className="skip-link" href="#main">
-          Skip to content
+          پرش به محتوا
         </a>
         <Header />
         <main id="main">

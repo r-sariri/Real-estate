@@ -10,23 +10,23 @@ type AboutSectionProps = {
   ctaTo?: string;
 };
 
-export function AboutSection({ ctaLabel = 'Learn More', ctaTo = '/about' }: AboutSectionProps = {}) {
+export function AboutSection({ ctaLabel = 'بیشتر بدانید', ctaTo = '/about' }: AboutSectionProps = {}) {
   return (
     <section className="section about" id="about" aria-labelledby="about-title">
       <div className="container about__grid">
         <Reveal className="about__copy">
-          <span className="eyebrow">About Us</span>
+          <span className="eyebrow">درباره ما</span>
           <h2 id="about-title" className="section-title about__title">
-            Who We Are
+            ما چه کسانی هستیم
           </h2>
           <div className="about__body">
             <p>
-              At Horizon Properties, we connect people with extraordinary homes and smart investments. Integrity,
-              transparency, and client satisfaction are at the heart of everything we do.
+              در املاک افق، آدم‌ها را به خانه‌های استثنایی و سرمایه‌گذاری‌های هوشمند وصل می‌کنیم. صداقت، شفافیت و
+              رضایت مشتری قلب هر کاری است که انجام می‌دهیم.
             </p>
             <p>
-              For more than fifteen years, our advisors have guided buyers, sellers and investors through the most
-              considered decisions of their lives — from first acquisitions to landmark estates.
+              بیش از پانزده سال است که مشاوران ما خریداران، فروشندگان و سرمایه‌گذاران را در سنجیده‌ترین تصمیم‌های
+              زندگی‌شان همراهی می‌کنند — از نخستین خرید تا عمارت‌های شاخص.
             </p>
           </div>
           <Button to={ctaTo} variant="primary">
@@ -38,18 +38,18 @@ export function AboutSection({ ctaLabel = 'Learn More', ctaTo = '/about' }: Abou
           <figure className="about__figure about__figure--main">
             <Img
               id="1600596542815-ffad4c1539a9"
-              alt="Modern two-storey residence with a lit pool terrace at dusk"
+              alt="اقامتگاه مدرن دو طبقه با تراس استخری روشن در گرگ‌ومیش"
               sizes="(max-width: 900px) 92vw, (max-width: 1440px) 42vw, 600px"
             />
           </figure>
           <figure className="about__figure about__figure--side">
             <Img
               id="1600585154340-be6161a56a0c"
-              alt="Luxury home exterior with landscaped gardens"
+              alt="نمای بیرونی خانه لوکس با باغ‌های طراحی‌شده"
               sizes="(max-width: 900px) 40vw, 24vw"
             />
           </figure>
-          <Link to="/properties" className="about__badge" aria-label="Browse our properties">
+          <Link to="/properties" className="about__badge" aria-label="مشاهده املاک ما">
             <Icon name="arrow-up-right" size={20} strokeWidth={1.6} />
           </Link>
         </Reveal>

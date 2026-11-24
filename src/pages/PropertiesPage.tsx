@@ -9,6 +9,7 @@ import { Reveal } from '../components/ui/Reveal';
 import { useProperties } from '../hooks/useProperties';
 import { useFavorites } from '../store/FavoritesContext';
 import type { Property } from '../data/types';
+import { PROPERTY_TYPE_LABELS } from '../data/properties';
 import './pages.css';
 
 const SORT_KEYS = ['featured', 'price-desc', 'price-asc', 'size-desc', 'newest'] as const;
@@ -84,6 +85,7 @@ export function PropertiesPage() {
           property.city,
           property.region,
           property.type,
+          PROPERTY_TYPE_LABELS[property.type],
           property.summary,
           ...property.highlights,
           ...property.amenities,
@@ -118,11 +120,11 @@ export function PropertiesPage() {
   return (
     <>
       <PageHero
-        eyebrow="The Collection"
-        title="Find your place"
-        lede="A curated portfolio of architecturally significant homes across the United States. Filter by what matters, or simply browse."
+        eyebrow="مجموعه"
+        title="جای خود را پیدا کنید"
+        lede="پرتفویی گزیده از خانه‌های ارزشمند از نظر معماری در سراسر آمریکا. بر اساس آنچه مهم است فیلتر کنید، یا فقط مرور کنید."
         imageId="1602343168117-bb8ffe3e2e9f"
-        imageAlt="Contemporary estate with a reflecting pool at dusk"
+        imageAlt="عمارت معاصر با استخر آینه‌ای در گرگ‌ومیش"
       />
 
       <div className="container properties__filters">
@@ -133,9 +135,9 @@ export function PropertiesPage() {
         <div className="container">
           <div className="results-bar">
             <h2 id="results-title" className="results-bar__count" aria-live="polite">
-              {loading ? 'Loading residences' : (
+              {loading ? 'در حال بارگذاری املاک' : (
                 <>
-                  <strong>{results.length}</strong> {results.length === 1 ? 'residence' : 'residences'}
+                  <strong>{results.length.toLocaleString('fa-IR')}</strong> ملک
                 </>
               )}
             </h2>
@@ -147,11 +149,11 @@ export function PropertiesPage() {
                 onClick={toggleSaved}
               >
                 <Icon name="heart" size={15} strokeWidth={1.6} />
-                Saved{savedCount ? ` (${savedCount})` : ''}
+                ذخیره‌شده{savedCount ? ` (${savedCount.toLocaleString('fa-IR')})` : ''}
               </button>
               {isDirty ? (
                 <button type="button" className="results-bar__clear" onClick={reset}>
-                  Clear filters
+                  حذف فیلترها
                 </button>
               ) : null}
             </div>
@@ -176,17 +178,17 @@ export function PropertiesPage() {
               <span className="properties-empty__icon">
                 <Icon name="search" size={22} strokeWidth={1.4} />
               </span>
-              <h2 className="properties-empty__title">No residences match those filters</h2>
+              <h2 className="properties-empty__title">هیچ ملکی با این فیلترها هم‌خوان نیست</h2>
               <p className="properties-empty__text">
-                Try widening the price range or clearing a location — our advisors can also search privately on your
-                behalf.
+                بازه قیمت را گسترده‌تر کنید یا یک موقعیت را بردارید — مشاوران ما می‌توانند به‌صورت خصوصی هم برای شما
+                جستجو کنند.
               </p>
               <div className="properties-empty__actions">
                 <Button variant="primary" onClick={reset} icon={null}>
-                  Clear filters
+                  حذف فیلترها
                 </Button>
                 <Button to="/contact" variant="outline">
-                  Ask an advisor
+                  پرسش از مشاور
                 </Button>
               </div>
             </div>

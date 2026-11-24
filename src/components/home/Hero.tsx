@@ -29,7 +29,7 @@ export function Hero() {
           {/* Last-resort still: carries the hero if the film never arrives. */}
           <Img
             id="1512917774080-9991f1c4c750"
-            alt="Contemporary hillside villa with an illuminated infinity pool at blue hour"
+            alt="ویلای معاصر در دامنه کوه با استخر بی‌نهایت روشن در ساعت آبی"
             priority
             sizes="100vw"
             widths={[768, 1080, 1440, 1920, 2400]}
@@ -57,7 +57,7 @@ export function Hero() {
 
           {film && !ready && (
             <div className="hero__loading" role="status">
-              <span className="hero__loading-label">Preparing the walkthrough</span>
+              <span className="hero__loading-label">آماده‌سازی تور مجازی</span>
               <span className="hero__loading-track" aria-hidden="true">
                 <span className="hero__loading-fill" />
               </span>
@@ -67,21 +67,21 @@ export function Hero() {
 
         <div className="hero__inner container">
           <h1 id="hero-title" className="hero__title">
-            Discover Exceptional
+            خانه‌ها و سرمایه‌گذاری‌های
             <br />
-            Homes &amp; Investments
+            شاخص را کشف کنید
           </h1>
           <p className="hero__lede">
-            Premium properties in prime locations. Find your dream home or the perfect investment with confidence.
+            املاک ممتاز در بهترین موقعیت‌ها. خانه رؤیایی یا سرمایه‌گذاری درست خود را با اطمینان پیدا کنید.
           </p>
         </div>
 
         <div className="hero__foot container">
           <a className="hero__scroll" href="#about">
             <span className="hero__scroll-line" aria-hidden="true" />
-            <span>Scroll to explore</span>
+            <span>برای گشت اسکرول کنید</span>
           </a>
-          <p className="hero__cities">Austin · Malibu · Miami · Los Angeles</p>
+          <p className="hero__cities">آستین · مالیبو · میامی · لس‌آنجلس</p>
         </div>
       </div>
     </section>

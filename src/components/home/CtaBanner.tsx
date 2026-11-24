@@ -11,11 +11,11 @@ export function CtaBanner() {
             <Icon name="key" size={24} strokeWidth={1.4} />
           </span>
           <div className="cta-banner__copy">
-            <h2 className="cta-banner__title">Ready to Find Your Perfect Property?</h2>
-            <p className="cta-banner__text">Let our experts guide you to the right home or investment.</p>
+            <h2 className="cta-banner__title">آماده پیدا کردن ملک دلخواهتان هستید؟</h2>
+            <p className="cta-banner__text">بگذارید کارشناسان ما شما را به خانه یا سرمایه‌گذاری درست برسانند.</p>
           </div>
           <Button to="/contact" variant="primary" className="cta-banner__button">
-            Get In Touch
+            تماس با ما
           </Button>
         </div>
       </div>

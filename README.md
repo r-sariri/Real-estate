@@ -61,8 +61,11 @@ src/
 | Mist (CTA) | `#EEF2F6` |
 | Champagne | `#C5A072` |
 
-Type: Inter (variable) for UI and headings, Playfair Display italic for editorial
-accents. Both are self-hosted via `@fontsource`, so no external font request is
-made at runtime.
+Language: the site is Persian (fa) and right-to-left. `index.html` sets
+`lang="fa" dir="rtl"`; `src/styles/rtl.css` carries the Persian typography
+(Vazirmatn, self-hosted from `public/fonts`, so no external font request) and the
+directional overrides the Latin design needed. Property `type` values stay in
+English internally because they drive the `?type=` filter; the Persian label is
+resolved through `PROPERTY_TYPE_LABELS` in `src/data/properties.ts`.
 
 Motion is CSS-only and respects `prefers-reduced-motion`.

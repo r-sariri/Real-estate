@@ -141,6 +141,7 @@ export function Icon({ name, size = 20, strokeWidth = 1.5, ...rest }: IconProps)
       viewBox="0 0 24 24"
       width={size}
       height={size}
+      data-icon={name}
       fill="none"
       stroke="currentColor"
       strokeWidth={strokeWidth}

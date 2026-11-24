@@ -38,10 +38,10 @@ export function InquiryForm({ mode, property, onDone, submitLabel }: InquiryForm
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const next: Partial<Record<keyof FormValues, string>> = {};
-    if (!values.name.trim()) next.name = 'Please add your name.';
-    if (!EMAIL_RE.test(values.email.trim())) next.email = 'Please add a valid email address.';
-    if (mode === 'viewing' && !values.date) next.date = 'Choose a preferred date.';
-    if (mode === 'viewing' && !values.time) next.time = 'Choose a preferred time.';
+    if (!values.name.trim()) next.name = 'لطفاً نام خود را وارد کنید.';
+    if (!EMAIL_RE.test(values.email.trim())) next.email = 'لطفاً یک نشانی ایمیل معتبر وارد کنید.';
+    if (mode === 'viewing' && !values.date) next.date = 'تاریخ موردنظر را انتخاب کنید.';
+    if (mode === 'viewing' && !values.time) next.time = 'زمان موردنظر را انتخاب کنید.';
     setErrors(next);
     if (Object.keys(next).length > 0) return;
 
@@ -67,15 +67,15 @@ export function InquiryForm({ mode, property, onDone, submitLabel }: InquiryForm
         <span className="inquiry-success__icon">
           <Icon name="check" size={22} strokeWidth={1.8} />
         </span>
-        <h3 className="inquiry-success__title">Thank you{firstName ? `, ${firstName}` : ''}.</h3>
+        <h3 className="inquiry-success__title">سپاس{firstName ? `، ${firstName}` : ''}.</h3>
         <p className="inquiry-success__text">
           {mode === 'viewing'
-            ? `Your viewing request has been received${property ? ` for ${property.name}` : ''}. An advisor will confirm the time with you shortly.`
-            : `Your message has been received${property ? ` about ${property.name}` : ''}. An advisor will be in touch within one business day.`}
+            ? `درخواست بازدید شما ثبت شد${property ? ` برای ${property.name}` : ''}. یک مشاور به‌زودی زمان را با شما هماهنگ می‌کند.`
+            : `پیام شما دریافت شد${property ? ` درباره ${property.name}` : ''}. یک مشاور حداکثر تا یک روز کاری با شما تماس می‌گیرد.`}
         </p>
         {onDone ? (
           <Button variant="primary" onClick={onDone} icon={null}>
-            Done
+            بستن
           </Button>
         ) : null}
       </div>
@@ -86,7 +86,7 @@ export function InquiryForm({ mode, property, onDone, submitLabel }: InquiryForm
     <form className="inquiry-form" onSubmit={handleSubmit} noValidate>
       <div className="field">
         <label className="field__label" htmlFor={`${mode}-name`}>
-          Full name
+          نام و نام خانوادگی
         </label>
         <input
           id={`${mode}-name`}
@@ -108,7 +108,7 @@ export function InquiryForm({ mode, property, onDone, submitLabel }: InquiryForm
 
       <div className="field">
         <label className="field__label" htmlFor={`${mode}-email`}>
-          Email
+          ایمیل
         </label>
         <input
           id={`${mode}-email`}
@@ -130,7 +130,7 @@ export function InquiryForm({ mode, property, onDone, submitLabel }: InquiryForm
 
       <div className="field inquiry-form__full">
         <label className="field__label" htmlFor={`${mode}-phone`}>
-          Phone <span aria-hidden="true">(optional)</span>
+          تلفن <span aria-hidden="true">(اختیاری)</span>
         </label>
         <input
           id={`${mode}-phone`}
@@ -146,7 +146,7 @@ export function InquiryForm({ mode, property, onDone, submitLabel }: InquiryForm
         <>
           <div className="field">
             <label className="field__label" htmlFor="viewing-date">
-              Preferred date
+              تاریخ موردنظر
             </label>
             <input
               id="viewing-date"
@@ -168,7 +168,7 @@ export function InquiryForm({ mode, property, onDone, submitLabel }: InquiryForm
 
           <div className="field">
             <label className="field__label" htmlFor="viewing-time">
-              Preferred time
+              زمان موردنظر
             </label>
             <select
               id="viewing-time"
@@ -179,10 +179,10 @@ export function InquiryForm({ mode, property, onDone, submitLabel }: InquiryForm
               aria-describedby={errors.time ? 'viewing-time-error' : undefined}
               required
             >
-              <option value="">Select a window</option>
-              <option value="morning">Morning, 9–12</option>
-              <option value="afternoon">Afternoon, 12–4</option>
-              <option value="evening">Evening, 4–7</option>
+              <option value="">یک بازه را انتخاب کنید</option>
+              <option value="morning">صبح، ۹ تا ۱۲</option>
+              <option value="afternoon">بعدازظهر، ۱۲ تا ۱۶</option>
+              <option value="evening">عصر، ۱۶ تا ۱۹</option>
             </select>
             {errors.time ? (
               <p id="viewing-time-error" className="field__error">
@@ -195,7 +195,7 @@ export function InquiryForm({ mode, property, onDone, submitLabel }: InquiryForm
 
       <div className="field inquiry-form__full">
         <label className="field__label" htmlFor={`${mode}-message`}>
-          Message <span aria-hidden="true">(optional)</span>
+          پیام <span aria-hidden="true">(اختیاری)</span>
         </label>
         <textarea
           id={`${mode}-message`}
@@ -205,19 +205,19 @@ export function InquiryForm({ mode, property, onDone, submitLabel }: InquiryForm
           onChange={(event) => update('message', event.target.value)}
           placeholder={
             mode === 'viewing'
-              ? 'Anything we should prepare for your visit?'
-              : 'Tell us what you are looking for.'
+              ? 'چیزی هست که برای بازدید شما آماده کنیم؟'
+              : 'بگویید دنبال چه هستید.'
           }
         />
       </div>
 
       <div className="inquiry-form__full">
         <Button type="submit" variant="primary" block disabled={status === 'sending'} icon="arrow-right">
-          {status === 'sending' ? 'Sending…' : (submitLabel ?? (mode === 'viewing' ? 'Request Viewing' : 'Send Message'))}
+          {status === 'sending' ? 'در حال ارسال…' : (submitLabel ?? (mode === 'viewing' ? 'درخواست بازدید' : 'ارسال پیام'))}
         </Button>
         <p className="inquiry-form__note">
-          By submitting, you agree to be contacted by Horizon Properties about this enquiry. We never share your
-          details.
+          با ارسال این فرم، با تماس املاک افق درباره این درخواست موافقت می‌کنید. اطلاعات شما هرگز در اختیار
+          دیگران قرار نمی‌گیرد.
         </p>
       </div>
     </form>

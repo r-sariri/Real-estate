@@ -53,13 +53,13 @@ export function Lightbox({ images, index, open, title, onClose, onIndexChange }:
   const total = images.length;
 
   return (
-    <div className="lightbox" role="dialog" aria-modal="true" aria-label={`${title} photo gallery`}>
+    <div className="lightbox" role="dialog" aria-modal="true" aria-label={`گالری تصاویر ${title}`}>
       <div className="lightbox__top">
         <p className="lightbox__counter">
           <span>{String(index + 1).padStart(2, '0')}</span> / {String(total).padStart(2, '0')}
         </p>
         <p className="lightbox__title">{title}</p>
-        <button ref={closeRef} type="button" className="lightbox__close" onClick={onClose} aria-label="Close gallery">
+        <button ref={closeRef} type="button" className="lightbox__close" onClick={onClose} aria-label="بستن گالری">
           <Icon name="close" size={20} />
         </button>
       </div>
@@ -69,7 +69,7 @@ export function Lightbox({ images, index, open, title, onClose, onIndexChange }:
           type="button"
           className="lightbox__nav lightbox__nav--prev"
           onClick={() => onIndexChange((index - 1 + total) % total)}
-          aria-label="Previous photo"
+          aria-label="تصویر قبلی"
         >
           <Icon name="arrow-left" size={20} />
         </button>
@@ -83,20 +83,20 @@ export function Lightbox({ images, index, open, title, onClose, onIndexChange }:
           type="button"
           className="lightbox__nav lightbox__nav--next"
           onClick={() => onIndexChange((index + 1) % total)}
-          aria-label="Next photo"
+          aria-label="تصویر بعدی"
         >
           <Icon name="arrow-right" size={20} />
         </button>
       </div>
 
-      <div className="lightbox__thumbs" role="group" aria-label="Choose a photo">
+      <div className="lightbox__thumbs" role="group" aria-label="انتخاب تصویر">
         {images.map((item, itemIndex) => (
           <button
             key={item.id}
             type="button"
             className={`lightbox__thumb${itemIndex === index ? ' is-active' : ''}`}
             onClick={() => onIndexChange(itemIndex)}
-            aria-label={`Photo ${itemIndex + 1}: ${item.alt}`}
+            aria-label={`تصویر ${itemIndex + 1}: ${item.alt}`}
             aria-current={itemIndex === index}
           >
             <img src={unsplashUrl(item.id, 240)} alt="" loading="lazy" />

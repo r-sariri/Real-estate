@@ -8,13 +8,13 @@ export function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="Our Story"
-        title="A practice built on judgement"
-        lede="Horizon Properties was founded on a simple premise: that buying or selling a significant home deserves the same rigour as any other major financial decision — and rather better company."
+        eyebrow="داستان ما"
+        title="دفتری که بر قضاوت بنا شده"
+        lede="املاک افق بر یک اصل ساده بنا شد: خرید یا فروش یک خانه مهم، همان دقتی را می‌طلبد که هر تصمیم مالی بزرگ دیگر — و کمی هم‌نشین بهتر."
         imageId="1600585154340-be6161a56a0c"
-        imageAlt="Contemporary residence with landscaped gardens"
+        imageAlt="اقامتگاه معاصر با باغ‌های طراحی‌شده"
       />
-      <AboutSection ctaLabel="Speak With an Advisor" ctaTo="/contact" />
+      <AboutSection ctaLabel="گفت‌وگو با مشاور" ctaTo="/contact" />
       <WhyChoose />
       <TeamSection />
       <CtaBanner />
