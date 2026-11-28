@@ -1,0 +1,76 @@
+# Base44 sandbox compose — runs the app from the cloned source (never a prebuilt image).
+# Postgres is the only prebuilt image; the app service mounts the source and runs
+# `next dev`, so every edit is reflected without rebuilding.
+
+name: zarrin
+
+services:
+  db:
+    image: postgres:16-alpine
+    restart: on-failure
+    environment:
+      POSTGRES_USER: zarrin
+      POSTGRES_PASSWORD: zarrin_dev_password
+      POSTGRES_DB: zarrin
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U zarrin -d zarrin"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
+  app:
+    image: node:22-bookworm-slim
+    restart: on-failure
+    working_dir: /app
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    env_file:
+      # Platform-managed secrets (outside the repo). Always the last entry so a
+      # dashboard value wins over anything above it.
+      - /run/base44/app.env
+    environment:
+      DATABASE_URL: postgresql://zarrin:zarrin_dev_password@db:5432/zarrin?schema=public
+      NODE_ENV: development
+      NEXT_TELEMETRY_DISABLED: "1"
+      # Preview plumbing: passed through, never hardcoded. next.config.ts only
+      # enables its overrides when BASE44_PREVIEW_MODE === "1".
+      BASE44_PREVIEW_MODE: ${BASE44_PREVIEW_MODE:-}
+      BASE44_PUBLIC_HOST_SUFFIX: ${BASE44_PUBLIC_HOST_SUFFIX:-}
+      BASE44_SANDBOX_HOST_DOMAIN: ${BASE44_SANDBOX_HOST_DOMAIN:-}
+      NEXT_PUBLIC_SITE_URL: https://3000-${BASE44_PUBLIC_HOST_SUFFIX}
+      # Bind-mounted sources need polling for reliable hot reload.
+      WATCHPACK_POLLING: "true"
+      CHOKIDAR_USEPOLLING: "true"
+    volumes:
+      - ${BASE44_PROJECT_ROOT}:/app
+      - node_modules:/app/node_modules
+      - next_cache:/app/.next
+    # Install → generate client → migrate → seed → dev server, all from source.
+    command: >
+      sh -ec "npm ci --no-audit --no-fund &&
+              npx prisma generate &&
+              npx prisma migrate deploy &&
+              npx prisma db seed &&
+              exec npm run dev"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:3000/api/health').then((r) => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))",
+        ]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+      start_period: 240s
+
+volumes:
+  db_data:
+  node_modules:
+  next_cache:

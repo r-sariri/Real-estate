@@ -1,0 +1,12 @@
+{
+  "previewPort": 3000,
+  "healthPath": "/api/health",
+  "startCommand": "docker compose -f docker-compose.base44.yml up -d",
+  "secrets": [],
+  "notes": {
+    "database": "Postgres 16 runs as the `db` compose service; credentials are local-only and generated in compose.",
+    "auth": "Session cookies (httpOnly, SameSite=Lax) are stored server-side in the Session table; no external auth provider or signing secret is required to boot.",
+    "seedAccounts": "admin@zarrin.ir / Zarrin@1404 (ADMIN) and customer@zarrin.ir / Zarrin@1404 (CUSTOMER). Override with SEED_ADMIN_PASSWORD.",
+    "paymentGateway": "Configured in the admin dashboard (Settings). Default is manual; no credentials required to boot."
+  }
+}
