@@ -8,12 +8,12 @@ export function ProductGallery({ images, name }: { images: string[]; name: strin
   const [active, setActive] = useState(0);
   const [zoom, setZoom] = useState(false);
   const [origin, setOrigin] = useState("50% 50%");
-  const list = images.length > 0 ? images : ["/hero.svg"];
+  const list = images.length > 0 ? images : ["/hero.jpg"];
 
   return (
     <div>
       <div
-        className="group relative aspect-square overflow-hidden rounded-[2rem] border border-line bg-gradient-to-br from-cream to-ice/50"
+        className="group relative aspect-square overflow-hidden rounded-[2rem] border border-silver/70 bg-gradient-to-br from-white via-cream to-ice/60"
         onMouseEnter={() => setZoom(true)}
         onMouseLeave={() => setZoom(false)}
         onMouseMove={(event) => {

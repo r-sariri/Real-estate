@@ -73,7 +73,7 @@ export function AddToCart({
           type="submit"
           disabled={disabled || pending}
           aria-label={`افزودن ${product.name} به سبد خرید`}
-          className="grid size-10 place-items-center rounded-full bg-ink text-pearl transition-all hover:bg-gold-deep disabled:opacity-40"
+          className="grid size-10 place-items-center rounded-full border border-gold/45 bg-white/80 text-gold-deep shadow-soft backdrop-blur transition-all hover:border-gold hover:bg-gold-soft disabled:opacity-40"
         >
           <Icon name="cart" size={17} />
         </button>
@@ -249,7 +249,7 @@ export function QuickView({ product }: { product: ProductDTO }) {
             <button type="button" onClick={() => setOpen(false)} className="absolute end-4 top-4 z-10 grid size-8 place-items-center rounded-full bg-white/90 hover:bg-white" aria-label="بستن">
               <Icon name="close" size={16} />
             </button>
-            <img src={product.images[0] ?? "/hero.svg"} alt={product.name} width={600} height={600} className="aspect-square w-full rounded-2xl bg-white object-cover" />
+            <img src={product.images[0] ?? "/hero.jpg"} alt={product.name} width={600} height={600} className="aspect-square w-full rounded-2xl bg-white object-cover" />
             <div className="flex flex-col">
               <p className="text-[11px] tracking-[0.2em] text-gold-deep uppercase">نمایش سریع</p>
               <h3 className="mt-2 text-lg font-semibold">{product.name}</h3>

@@ -27,7 +27,7 @@ export default async function AdminCategoriesPage() {
               <input id="c-slug" name="slug" className={inputClass} dir="ltr" />
             </Field>
             <Field label="تصویر" name="c-image">
-              <input id="c-image" name="image" className={inputClass} dir="ltr" placeholder="/products/ring-classic.svg" />
+              <input id="c-image" name="image" className={inputClass} dir="ltr" placeholder="/products/ring-classic.jpg" />
             </Field>
             <Field label="ترتیب" name="c-sort">
               <input id="c-sort" name="sortOrder" type="number" defaultValue={categories.length + 1} className={inputClass} dir="ltr" />

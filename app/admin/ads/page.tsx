@@ -57,10 +57,10 @@ export default async function AdminAdsPage() {
               <input id="ad-target" name="targetUrl" required className={inputClass} dir="ltr" placeholder="https://example.com" />
             </Field>
             <Field label="تصویر دسکتاپ" name="ad-img-d" required>
-              <input id="ad-img-d" name="imageDesktop" required className={inputClass} dir="ltr" placeholder="/ad-wide.svg" />
+              <input id="ad-img-d" name="imageDesktop" required className={inputClass} dir="ltr" placeholder="/ad-wide.jpg" />
             </Field>
             <Field label="تصویر موبایل (اختیاری)" name="ad-img-m">
-              <input id="ad-img-m" name="imageMobile" className={inputClass} dir="ltr" placeholder="/ad-mobile.svg" />
+              <input id="ad-img-m" name="imageMobile" className={inputClass} dir="ltr" placeholder="/ad-mobile.jpg" />
             </Field>
             <Field label="جایگاه" name="ad-placement">
               <select id="ad-placement" name="placement" className={inputClass} defaultValue="HOME_MIDDLE">

@@ -48,7 +48,7 @@ const buttonBase =
 
 export const buttonStyles = {
   primary: `${buttonBase} bg-ink px-6 py-3 text-pearl hover:bg-gold-deep hover:shadow-[0_18px_40px_-20px_rgba(168,132,63,.8)]`,
-  gold: `${buttonBase} bg-gradient-to-l from-gold-deep via-gold to-champagne px-6 py-3 text-ink shadow-gold hover:brightness-105`,
+  gold: `${buttonBase} bg-[linear-gradient(100deg,#dcc48f_0%,#c6a45c_46%,#b3904c_100%)] px-6 py-3 text-ink shadow-gold ring-1 ring-white/60 hover:brightness-105`,
   outline: `${buttonBase} border border-line bg-white/70 px-6 py-3 text-ink hover:border-gold hover:bg-gold-soft/50`,
   ghost: `${buttonBase} px-4 py-2 text-ink-soft hover:text-gold-deep`,
   danger: `${buttonBase} border border-danger/30 bg-danger/5 px-4 py-2 text-danger hover:bg-danger/10`,
@@ -177,7 +177,7 @@ export function EmptyState({
 }) {
   return (
     <div className="flex flex-col items-center justify-center rounded-3xl border border-dashed border-line bg-white/60 px-6 py-16 text-center">
-      <span className="mb-4 grid size-14 place-items-center rounded-full bg-gold-soft text-gold-deep">
+      <span className="iridescent mb-4 grid size-14 place-items-center rounded-full text-gold-deep ring-1 ring-white/80">
         <Icon name={icon} size={24} />
       </span>
       <h3 className="text-base font-semibold">{title}</h3>

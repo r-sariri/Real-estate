@@ -45,7 +45,7 @@ export default async function AdminOrderDetailPage({ params }: { params: Params 
           <ul className="divide-y divide-line">
             {order.items.map((item) => (
               <li key={item.id} className="flex items-center gap-3 py-2.5">
-                <img src={item.image ?? "/hero.svg"} alt="" width={64} height={64} className="size-10 rounded-lg border border-line object-cover" loading="lazy" />
+                <img src={item.image ?? "/hero.jpg"} alt="" width={64} height={64} className="size-10 rounded-lg border border-line object-cover" loading="lazy" />
                 <div className="min-w-0 flex-1">
                   <p className="truncate text-[12px] font-medium">{item.name}</p>
                   <p className="text-[10.5px] text-muted">

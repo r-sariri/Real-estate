@@ -98,7 +98,7 @@ export default async function OrderDetailPage({ params }: { params: Params }) {
         <ul className="divide-y divide-line">
           {order.items.map((item) => (
             <li key={item.id} className="flex items-center gap-3 py-3">
-              <img src={item.image ?? "/hero.svg"} alt="" width={80} height={80} loading="lazy" className="size-12 rounded-xl border border-line object-cover" />
+              <img src={item.image ?? "/hero.jpg"} alt="" width={80} height={80} loading="lazy" className="size-12 rounded-xl border border-line object-cover" />
               <div className="min-w-0 flex-1">
                 <p className="truncate text-[12.5px] font-medium">{item.name}</p>
                 <p className="text-[10.5px] text-muted">

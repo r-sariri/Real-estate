@@ -70,7 +70,7 @@ export default async function ShopPage({ searchParams }: { searchParams: SearchP
     <div className="container-lux py-8 sm:py-10">
       <Breadcrumbs items={[{ name: "فروشگاه", href: "/shop" }, ...(activeCategory ? [{ name: activeCategory.name, href: `/shop?category=${activeCategory.slug}` }] : [])]} />
 
-      <header className="mb-7">
+      <header className="relative mb-7 overflow-hidden rounded-[2rem] border border-white/70 bg-gradient-to-l from-ice/70 via-white/70 to-cream/60 px-5 py-6 backdrop-blur-sm sm:px-7">
         <h1 className="text-2xl font-semibold sm:text-3xl">
           {q ? `نتایج جستجو برای «${q}»` : activeCategory ? activeCategory.name : "همه جواهرات"}
         </h1>

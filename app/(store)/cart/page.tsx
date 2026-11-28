@@ -47,7 +47,7 @@ export default async function CartPage() {
               <li key={item.id} className="flex gap-3 rounded-3xl border border-line bg-white/70 p-3 sm:gap-4 sm:p-4">
                 <Link href={`/product/${item.product.slug}`} className="shrink-0">
                   <img
-                    src={item.product.images[0] ?? "/hero.svg"}
+                    src={item.product.images[0] ?? "/hero.jpg"}
                     alt={item.product.name}
                     width={160}
                     height={160}

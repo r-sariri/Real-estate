@@ -39,7 +39,7 @@ export default async function AdminProductsPage() {
               <tr key={product.id}>
                 <td className="px-2 py-2">
                   <div className="flex items-center gap-2">
-                    <img src={product.images[0] ?? "/hero.svg"} alt="" width={64} height={64} className="size-9 rounded-lg border border-line object-cover" loading="lazy" />
+                    <img src={product.images[0] ?? "/hero.jpg"} alt="" width={64} height={64} className="size-9 rounded-lg border border-line object-cover" loading="lazy" />
                     <Link href={`/admin/products/${product.id}`} className="font-medium hover:text-gold-deep">{product.name}</Link>
                   </div>
                 </td>

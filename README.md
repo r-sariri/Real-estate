@@ -163,8 +163,11 @@ Until then the site runs in manual mode and never presents a non-functional paym
 
 ## 9. Known limitations
 
-- Product photography is high-quality **SVG placeholder artwork** (`public/products/*.svg`);
-  replace with real WebP/AVIF photos when available.
+- Product photography ships as **licensed stock photographs** (`public/products/*.jpg`, Pexels
+  licence) mapped in `prisma/seed.ts`. They are demo imagery, not photographs of the actual
+  pieces; upload real product photos from the admin panel and they take precedence.
+- Visual system: pearl white, icy turquoise, seafoam, aqua and metallic silver surfaces, with
+  champagne gold reserved for accents (see the tokens in `app/globals.css`).
 - Price sorting and price-range filtering are computed in-app over the filtered set (capped at
   500 rows per query) — add a denormalised price column if the catalogue grows beyond that.
 - Rate limiting is in-process (single instance).

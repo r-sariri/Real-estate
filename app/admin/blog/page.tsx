@@ -23,7 +23,7 @@ export default async function AdminBlogPage() {
               <input id="bl-slug" name="slug" className={inputClass} dir="ltr" />
             </Field>
             <Field label="تصویر کاور" name="bl-cover">
-              <input id="bl-cover" name="cover" className={inputClass} dir="ltr" placeholder="/blog-1.svg" />
+              <input id="bl-cover" name="cover" className={inputClass} dir="ltr" placeholder="/blog-1.jpg" />
             </Field>
             <Field label="خلاصه" name="bl-excerpt">
               <input id="bl-excerpt" name="excerpt" className={inputClass} />

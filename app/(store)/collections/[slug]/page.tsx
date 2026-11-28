@@ -39,7 +39,11 @@ export default async function CollectionPage({ params }: { params: Params }) {
     <div className="container-lux py-8 sm:py-10">
       <Breadcrumbs items={[{ name: "کالکشن‌ها", href: "/collections" }, { name: collection.name, href: `/collections/${collection.slug}` }]} />
 
-      <header className="relative mb-8 overflow-hidden rounded-[2rem] border border-line bg-gradient-to-l from-gold-soft/60 via-white to-ice/50 p-6 sm:p-10">
+      <header className="liquid-glass relative mb-8 overflow-hidden rounded-[2rem] p-6 sm:p-10">
+        <span
+          aria-hidden
+          className="animate-blob pointer-events-none absolute -top-16 end-[-3rem] size-56 bg-gradient-to-br from-ice-deep/60 via-cream to-transparent blur-2xl"
+        />
         <div className="relative max-w-2xl">
           <p className="text-[11px] tracking-[0.22em] text-gold-deep uppercase">کالکشن</p>
           <h1 className="mt-2 text-2xl font-semibold sm:text-4xl">{collection.name}</h1>

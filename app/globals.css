@@ -39,42 +39,67 @@
   font-display: swap;
 }
 
-/* ---------- Design tokens ---------- */
+/* ---------- Design tokens ----------
+   Palette: pearl white + icy turquoise + aqua + metallic silver, with
+   champagne gold reserved for accents (buttons, icons, borders, highlights).
+   Beige/cream are deliberately absent from the surface scale. */
 @theme {
   --font-sans: "Vazirmatn", ui-sans-serif, system-ui, "Segoe UI", Tahoma, sans-serif;
   --font-display: "Cormorant Garamond", "Vazirmatn", Georgia, serif;
 
-  --color-pearl: #fbf8f4;
+  --color-pearl: #fcfcfa;
   --color-ivory: #ffffff;
-  --color-cream: #f6f1e9;
-  --color-ice: #eaf1f6;
-  --color-ice-deep: #b7c9d8;
-  --color-silver: #cbd4dc;
-  --color-champagne: #ecdcbc;
-  --color-gold: #c9a96a;
-  --color-gold-deep: #a8843f;
-  --color-gold-soft: #f3e8d2;
-  --color-ink: #1d1b18;
-  --color-ink-soft: #4b463f;
-  --color-muted: #7d766c;
-  --color-line: #e9e3d9;
-  --color-success: #3f7a5c;
-  --color-danger: #a4443c;
+  --color-cream: #eaf8f8; /* icy turquoise surface (was beige) */
+  --color-ice: #d5f2ef; /* seafoam */
+  --color-ice-deep: #a9dcdd; /* soft aqua */
+  --color-silver: #d8dde0;
+  --color-champagne: #ead9b5;
+  --color-gold: #c6a45c;
+  --color-gold-deep: #8f6f35;
+  --color-gold-soft: #f4ead6;
+  --color-ink: #12262b;
+  --color-ink-soft: #3a5057;
+  --color-muted: #6b8087;
+  --color-line: #dbe8e9;
+  --color-success: #2e7a6b;
+  --color-danger: #a5473e;
 
   --radius-xl2: 1.75rem;
 
-  --shadow-soft: 0 1px 2px rgba(29, 27, 24, 0.04), 0 12px 32px -12px rgba(29, 27, 24, 0.12);
-  --shadow-lift: 0 2px 4px rgba(29, 27, 24, 0.05), 0 24px 60px -24px rgba(29, 27, 24, 0.22);
-  --shadow-gold: 0 18px 50px -24px rgba(168, 132, 63, 0.55);
+  --shadow-soft: 0 1px 2px rgba(18, 38, 43, 0.04), 0 14px 34px -16px rgba(18, 38, 43, 0.14);
+  --shadow-lift: 0 2px 4px rgba(18, 38, 43, 0.05), 0 28px 64px -28px rgba(18, 38, 43, 0.24);
+  --shadow-gold: 0 18px 46px -22px rgba(198, 164, 92, 0.6);
+  --shadow-glass: inset 0 1px 0 rgba(255, 255, 255, 0.92), 0 26px 60px -34px rgba(18, 38, 43, 0.35);
 
-  --animate-float: float 9s ease-in-out infinite;
+  --animate-float: float 11s ease-in-out infinite;
+  --animate-drift: drift 20s ease-in-out infinite alternate;
+  --animate-blob: blob 18s ease-in-out infinite;
+  --animate-sheen: sheen 9s linear infinite;
   --animate-shimmer: shimmer 2.4s linear infinite;
   --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @keyframes float {
   0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-  50% { transform: translate3d(0, -18px, 0) scale(1.02); }
+  50% { transform: translate3d(0, -16px, 0) scale(1.02); }
+}
+@keyframes drift {
+  0% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  100% { transform: translate3d(26px, -22px, 0) rotate(10deg); }
+}
+@keyframes blob {
+  0%, 100% {
+    border-radius: 48% 52% 58% 42% / 54% 44% 56% 46%;
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  50% {
+    border-radius: 58% 42% 44% 56% / 42% 58% 42% 58%;
+    transform: translate3d(0, -14px, 0) rotate(8deg) scale(1.04);
+  }
+}
+@keyframes sheen {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
 }
 @keyframes shimmer {
   0% { background-position: 200% 0; }
@@ -111,7 +136,7 @@
   }
 
   ::selection {
-    background: var(--color-champagne);
+    background: var(--color-ice-deep);
     color: var(--color-ink);
   }
 
@@ -140,15 +165,41 @@
   .container-lux { padding-inline: 2.5rem; }
 }
 
+/* Translucent aqua glass layer */
 @utility glass {
-  background: color-mix(in srgb, white 72%, transparent);
-  backdrop-filter: blur(14px) saturate(140%);
-  -webkit-backdrop-filter: blur(14px) saturate(140%);
-  border: 1px solid color-mix(in srgb, white 60%, var(--color-line));
+  background: linear-gradient(
+    140deg,
+    color-mix(in srgb, white 84%, transparent) 0%,
+    color-mix(in srgb, #eaf8f8 62%, transparent) 52%,
+    color-mix(in srgb, #d8dde0 46%, transparent) 100%
+  );
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  border: 1px solid color-mix(in srgb, white 76%, #d8dde0);
+}
+
+/* Deeper liquid-glass panel: pearl highlight, aqua body, silver edge */
+@utility liquid-glass {
+  background:
+    radial-gradient(130% 120% at 12% 6%, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.34) 32%, transparent 62%),
+    linear-gradient(135deg, rgba(234, 248, 248, 0.86) 0%, rgba(213, 242, 239, 0.62) 46%, rgba(216, 221, 224, 0.52) 100%);
+  backdrop-filter: blur(22px) saturate(168%);
+  -webkit-backdrop-filter: blur(22px) saturate(168%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: var(--shadow-glass);
+}
+
+/* Iridescent pearl sheen — used on badges, frames and floating shapes */
+@utility iridescent {
+  background-image:
+    radial-gradient(72% 90% at 20% 12%, rgba(255, 255, 255, 0.92), transparent 56%),
+    radial-gradient(84% 84% at 82% 8%, rgba(213, 242, 239, 0.9), transparent 62%),
+    radial-gradient(92% 92% at 58% 96%, rgba(198, 164, 92, 0.32), transparent 66%),
+    linear-gradient(120deg, #fcfcfa 0%, #d5f2ef 34%, #a9dcdd 58%, #d8dde0 82%, #fcfcfa 100%);
 }
 
 @utility gold-text {
-  background: linear-gradient(100deg, #b18c48 0%, #e6d2a4 38%, #a8843f 62%, #d8bd85 100%);
+  background: linear-gradient(96deg, #96743a 0%, #e6d1a1 32%, #c6a45c 56%, #f4e9cf 76%, #a6853f 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -163,12 +214,24 @@
 }
 .no-scrollbar::-webkit-scrollbar { display: none; }
 
-/* Soft pearl page backdrop with warm/gold glows */
+/* Pearl page backdrop with aqua and silver light */
 @utility lux-backdrop {
+  background-color: var(--color-pearl);
   background-image:
-    radial-gradient(1100px 520px at 85% -10%, rgba(236, 220, 188, 0.45), transparent 65%),
-    radial-gradient(900px 480px at 5% 8%, rgba(183, 201, 216, 0.32), transparent 60%),
-    linear-gradient(180deg, #fdfbf8 0%, #fbf8f4 45%, #f7f3ed 100%);
+    radial-gradient(1000px 560px at 84% -12%, rgba(169, 220, 221, 0.68), transparent 64%),
+    radial-gradient(820px 500px at 2% 2%, rgba(213, 242, 239, 0.92), transparent 62%),
+    radial-gradient(700px 480px at 52% 108%, rgba(198, 164, 92, 0.14), transparent 68%),
+    linear-gradient(180deg, #fcfcfa 0%, #f2fafa 32%, #e6f7f7 66%, #fcfcfa 100%);
+}
+
+/* Soft pearl-to-aqua surface for sections and cards */
+@utility pearl-surface {
+  background-image: linear-gradient(170deg, #ffffff 0%, #fcfcfa 38%, #eaf8f8 100%);
+}
+
+/* Fine silver inner edge for glass cards */
+@utility glass-edge {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95), inset 0 0 0 1px rgba(216, 221, 224, 0.55);
 }
 
 /* Reveal-on-scroll (progressive enhancement: visible by default) */
@@ -186,8 +249,8 @@
 /* Elegant thin scrollbar */
 @media (min-width: 768px) {
   ::-webkit-scrollbar { width: 10px; height: 10px; }
-  ::-webkit-scrollbar-track { background: #f6f1e9; }
-  ::-webkit-scrollbar-thumb { background: #ddd2c1; border-radius: 999px; border: 2px solid #f6f1e9; }
+  ::-webkit-scrollbar-track { background: #eaf8f8; }
+  ::-webkit-scrollbar-thumb { background: #cfdedf; border-radius: 999px; border: 2px solid #eaf8f8; }
   ::-webkit-scrollbar-thumb:hover { background: var(--color-gold); }
 }
 

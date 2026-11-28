@@ -25,7 +25,7 @@ export default async function AdminCollectionsPage() {
               <input id="col-slug" name="slug" className={inputClass} dir="ltr" />
             </Field>
             <Field label="تصویر" name="col-image">
-              <input id="col-image" name="image" className={inputClass} dir="ltr" placeholder="/products/necklace-drop.svg" />
+              <input id="col-image" name="image" className={inputClass} dir="ltr" placeholder="/products/necklace-drop.jpg" />
             </Field>
             <Field label="ترتیب" name="col-sort">
               <input id="col-sort" name="sortOrder" type="number" defaultValue={collections.length + 1} className={inputClass} dir="ltr" />

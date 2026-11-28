@@ -78,7 +78,7 @@ export default async function CheckoutPage({ searchParams }: { searchParams: Sea
         <ul className="flex flex-wrap gap-3">
           {lines.map(({ item, lineTotal }) => (
             <li key={item.id} className="flex items-center gap-2 rounded-2xl border border-line bg-white px-2.5 py-2">
-              <img src={item.product.images[0] ?? "/hero.svg"} alt="" width={80} height={80} className="size-10 rounded-lg object-cover" loading="lazy" />
+              <img src={item.product.images[0] ?? "/hero.jpg"} alt="" width={80} height={80} className="size-10 rounded-lg object-cover" loading="lazy" />
               <div className="max-w-[150px]">
                 <p className="truncate text-[11px] font-medium">{item.product.name}</p>
                 <p className="text-[10px] text-muted">{item.qty} × {formatMoney(lineTotal / item.qty, currency)}</p>

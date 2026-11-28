@@ -114,7 +114,7 @@ export default async function AdminProductFormPage({ params }: { params: Params 
             </div>
           </fieldset>
 
-          <Field label="تصاویر (هر خط یک نشانی)" name="p-images" hint="مثلاً /products/ring-classic.svg">
+          <Field label="تصاویر (هر خط یک نشانی)" name="p-images" hint="مثلاً /products/ring-classic.jpg">
             <textarea id="p-images" name="images" rows={3} defaultValue={(product?.images ?? []).join("\n")} className={`${inputClass} resize-y`} dir="ltr" />
           </Field>
 

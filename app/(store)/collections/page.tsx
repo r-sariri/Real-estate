@@ -22,7 +22,7 @@ export default async function CollectionsPage() {
   return (
     <div className="container-lux py-8 sm:py-10">
       <Breadcrumbs items={[{ name: "کالکشن‌ها", href: "/collections" }]} />
-      <header className="mb-8 max-w-2xl">
+      <header className="relative mb-8 max-w-2xl overflow-hidden rounded-[2rem] border border-white/70 bg-gradient-to-l from-ice/70 via-white/70 to-cream/60 px-5 py-6 backdrop-blur-sm sm:px-7">
         <h1 className="text-2xl font-semibold sm:text-3xl">کالکشن‌های زرّین</h1>
         <p className="mt-3 text-[13.5px] leading-7 text-ink-soft">
           هر کالکشن با یک ایده شروع شده و با دست ساخته می‌شود؛ از قطعات مینیمال روزمره تا ست‌های عروس.

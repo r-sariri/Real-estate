@@ -52,7 +52,7 @@ export default async function OrdersPage() {
                   {order.items.slice(0, 4).map((item, index) => (
                     <img
                       key={`${order.id}-${index}`}
-                      src={item.image ?? "/hero.svg"}
+                      src={item.image ?? "/hero.jpg"}
                       alt=""
                       width={80}
                       height={80}

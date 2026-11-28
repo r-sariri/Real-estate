@@ -17,7 +17,7 @@ export function organizationJsonLd(settings: SiteSettings) {
     name: settings.brandName,
     alternateName: settings.brandLatin,
     url: SITE_URL,
-    logo: absoluteUrl("/hero.svg"),
+    logo: absoluteUrl("/hero.jpg"),
     description: settings.metaDescription,
     telephone: settings.phone,
     email: settings.email,

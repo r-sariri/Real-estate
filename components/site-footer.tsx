@@ -30,7 +30,7 @@ export async function SiteFooter() {
   ].filter((item) => item.href);
 
   return (
-    <footer className="mt-24 border-t border-line bg-gradient-to-b from-cream/60 to-pearl">
+    <footer className="mt-24 border-t border-silver/60 bg-gradient-to-b from-cream/70 via-pearl to-pearl">
       <div className="container-lux py-14">
         <div className="grid gap-10 lg:grid-cols-[1.4fr_repeat(3,1fr)]">
           <div>
@@ -62,7 +62,7 @@ export async function SiteFooter() {
           <Column title="قوانین و سیاست‌ها" links={FOOTER_POLICIES} />
         </div>
 
-        <div className="mt-12 grid gap-8 rounded-3xl border border-line bg-white/70 p-6 sm:p-8 lg:grid-cols-2 lg:items-center">
+        <div className="liquid-glass mt-12 grid gap-8 rounded-3xl p-6 sm:p-8 lg:grid-cols-2 lg:items-center">
           <div>
             <h2 className="text-lg font-semibold">عضویت در خبرنامه زرّین</h2>
             <p className="mt-2 text-[13px] leading-7 text-ink-soft">از کالکشن‌های جدید، پیشنهادهای ویژه و مقالات تخصصی طلا باخبر شوید.</p>

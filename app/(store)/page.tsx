@@ -63,18 +63,24 @@ export default async function HomePage() {
       {/* ---------- Hero ---------- */}
       <section className="lux-backdrop relative overflow-hidden">
         <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
-          <span className="animate-float absolute -top-24 start-[-6rem] size-72 rounded-full bg-champagne/40 blur-3xl" />
-          <span className="animate-float absolute top-1/3 end-[-8rem] size-80 rounded-full bg-ice/60 blur-3xl [animation-delay:-3s]" />
-          <span className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-l from-transparent via-gold/30 to-transparent" />
+          <span className="animate-blob absolute -top-28 start-[-7rem] size-[22rem] bg-gradient-to-br from-ice/90 via-ice-deep/60 to-silver/40 blur-3xl" />
+          <span className="animate-drift absolute top-1/4 end-[-9rem] size-[26rem] rounded-full bg-gradient-to-tr from-ice-deep/60 via-cream/70 to-silver/50 blur-3xl" />
+          <span className="animate-float absolute bottom-[-7rem] start-1/3 size-64 rounded-full bg-champagne/25 blur-3xl [animation-delay:-4s]" />
+          <span className="animate-float absolute top-16 end-1/4 size-3 rounded-full bg-white/90 shadow-[0_0_18px_rgba(255,255,255,.95)]" />
+          <span className="animate-float absolute top-1/2 start-[12%] size-2 rounded-full bg-white/80 shadow-[0_0_14px_rgba(255,255,255,.85)] [animation-delay:-2.5s]" />
+          <span className="liquid-glass animate-float absolute top-[20%] start-[5%] size-10 rounded-full opacity-80 [animation-delay:-1.5s]" />
+          <span className="liquid-glass animate-float absolute top-[58%] start-[2%] size-6 rounded-full opacity-70 [animation-delay:-6s]" />
+          <span className="liquid-glass animate-drift absolute bottom-[10%] end-[7%] size-14 rounded-full opacity-60" />
+          <span className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-l from-transparent via-silver to-transparent" />
         </div>
 
-        <div className="container-lux relative grid gap-12 py-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-20">
+        <div className="container-lux relative grid gap-12 py-12 md:grid-cols-[1.05fr_0.95fr] md:items-center md:gap-8 md:py-14 lg:gap-12 lg:py-20">
           <div>
-            <p className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-white/70 px-3.5 py-1.5 text-[11px] tracking-wide text-gold-deep backdrop-blur">
+            <p className="liquid-glass inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-[11px] tracking-wide text-gold-deep">
               <Icon name="sparkle" size={13} />
               کالکشن ۱۴۰۴ · ساخت دست در تهران
             </p>
-            <h1 className="mt-5 text-[2.15rem] leading-[1.25] font-semibold tracking-tight sm:text-5xl lg:text-[3.4rem]">
+            <h1 className="mt-5 text-[2.15rem] leading-[1.25] font-semibold tracking-tight sm:text-[2.6rem] md:text-[2.5rem] lg:text-[3.4rem]">
               درخششی که
               <br />
               <span className="gold-text">به یادگار می‌ماند</span>
@@ -99,16 +105,22 @@ export default async function HomePage() {
 
           <div className="relative">
             <div className="relative mx-auto w-full max-w-[520px]">
-              <div aria-hidden className="absolute -inset-4 rounded-[3rem] bg-gradient-to-br from-white/70 via-gold-soft/40 to-ice/50 blur-2xl" />
-              <img
-                src="/hero.svg"
-                alt="گردنبند طلای دست‌ساز زرّین با آویز قطره‌ای"
-                width={900}
-                height={900}
-                fetchPriority="high"
-                decoding="async"
-                className="relative aspect-square w-full rounded-[2.5rem] border border-white/70 object-cover shadow-lift"
-              />
+              <div aria-hidden className="iridescent absolute -inset-5 rounded-[3.5rem] opacity-70 blur-2xl" />
+              <div className="relative overflow-hidden rounded-[2.75rem] border border-white/80 bg-white/40 p-2 shadow-lift backdrop-blur">
+                <img
+                  src="/hero.jpg"
+                  alt="گردنبند طلای ۱۸ عیار دست‌ساز زرّین بر گردن مدل"
+                  width={1200}
+                  height={1500}
+                  fetchPriority="high"
+                  decoding="async"
+                  className="aspect-[4/5] w-full rounded-[2.35rem] object-cover"
+                />
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-2 rounded-[2.35rem] bg-gradient-to-t from-ink/30 via-transparent to-white/25"
+                />
+              </div>
               <div className="glass absolute -bottom-4 start-2 flex items-center gap-2.5 rounded-2xl px-3.5 py-2.5 shadow-soft sm:start-4">
                 <span className="grid size-8 place-items-center rounded-full bg-success/10 text-success">
                   <Icon name="shield" size={16} />
@@ -122,17 +134,24 @@ export default async function HomePage() {
                 <Icon name="diamond" size={14} className="text-gold-deep" />
                 <span className="text-[11px] text-ink-soft">دست‌ساز</span>
               </div>
+              <div className="liquid-glass absolute bottom-16 end-[-0.75rem] hidden flex-col items-center rounded-2xl px-3 py-2 sm:flex">
+                <span className="font-display text-lg leading-none text-gold-deep" dir="ltr">18K</span>
+                <span className="mt-0.5 text-[9px] text-ink-soft">طلای خالص</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* ---------- Trust strip ---------- */}
-      <section aria-label="مزیت‌های خرید" className="border-y border-line/70 bg-white/60">
+      <section
+        aria-label="مزیت‌های خرید"
+        className="border-y border-white/70 bg-gradient-to-l from-cream/80 via-white/70 to-ice/60 backdrop-blur-sm"
+      >
         <div className="container-lux grid grid-cols-2 gap-4 py-6 lg:grid-cols-4">
           {TRUST.map((item) => (
             <div key={item.title} className="flex items-center gap-3">
-              <span className="grid size-10 shrink-0 place-items-center rounded-full bg-gold-soft/70 text-gold-deep">
+              <span className="grid size-10 shrink-0 place-items-center rounded-full bg-gradient-to-br from-gold-soft to-cream text-gold-deep ring-1 ring-white/80">
                 <Icon name={item.icon} size={18} />
               </span>
               <div>
@@ -174,7 +193,7 @@ export default async function HomePage() {
       </section>
 
       {/* ---------- Featured products ---------- */}
-      <section className="bg-gradient-to-b from-white/70 to-transparent py-14 sm:py-16">
+      <section className="bg-gradient-to-b from-cream/70 via-pearl/60 to-transparent py-14 sm:py-16">
         <div className="container-lux">
           <Reveal>
             <SectionHeading
@@ -209,14 +228,15 @@ export default async function HomePage() {
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <Reveal>
             <div className="relative">
+              <div aria-hidden className="iridescent absolute -inset-4 rounded-[3rem] opacity-50 blur-2xl" />
               <img
-                src="/craft.svg"
-                alt="کارگاه ساخت جواهرات زرّین — حلقه طلا با نگین"
-                width={900}
-                height={700}
+                src="/craft.jpg"
+                alt="استادکار در حال ساخت جواهرات طلا در کارگاه زرّین"
+                width={1200}
+                height={900}
                 loading="lazy"
                 decoding="async"
-                className="w-full rounded-[2.5rem] border border-white/70 object-cover shadow-lift"
+                className="relative aspect-[4/3] w-full rounded-[2.5rem] border border-white/80 object-cover shadow-lift"
               />
               <div className="glass absolute -bottom-5 end-4 rounded-2xl px-4 py-3 shadow-soft">
                 <p className="text-[10px] tracking-wide text-muted">از سال ۱۳۸۴</p>
@@ -266,8 +286,12 @@ export default async function HomePage() {
         <section className="container-lux">
           <Link
             href={banners[0].ctaUrl ?? "/shop"}
-            className="group relative flex flex-col items-start justify-between gap-4 overflow-hidden rounded-[2rem] border border-gold/25 bg-gradient-to-l from-gold-soft/70 via-white to-ice/60 p-7 sm:flex-row sm:items-center sm:p-9"
+            className="group relative flex flex-col items-start justify-between gap-4 overflow-hidden rounded-[2rem] border border-white/80 liquid-glass p-7 sm:flex-row sm:items-center sm:p-9"
           >
+            <span
+              aria-hidden
+              className="animate-blob pointer-events-none absolute -top-20 end-[-3rem] size-56 bg-gradient-to-br from-ice-deep/60 via-cream to-transparent blur-2xl"
+            />
             <div>
               <p className="text-[11px] tracking-[0.2em] text-gold-deep uppercase">پیشنهاد ویژه</p>
               <h2 className="mt-2 text-xl font-semibold sm:text-2xl">{banners[0].title}</h2>
@@ -297,7 +321,7 @@ export default async function HomePage() {
       {/* ---------- Newsletter ---------- */}
       <section className="container-lux pb-16">
         <Reveal>
-          <div className="relative overflow-hidden rounded-[2.5rem] border border-white/60 bg-gradient-to-br from-ice/70 via-white to-gold-soft/70 p-8 sm:p-12">
+          <div className="relative overflow-hidden rounded-[2.5rem] border border-white/70 bg-gradient-to-br from-ice/80 via-white to-gold-soft/60 p-8 shadow-soft sm:p-12">
             <div aria-hidden className="pointer-events-none absolute -top-16 end-[-4rem] size-64 rounded-full bg-champagne/50 blur-3xl" />
             <div className="relative grid gap-6 lg:grid-cols-[1.1fr_1fr] lg:items-center">
               <div>

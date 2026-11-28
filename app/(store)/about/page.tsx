@@ -47,7 +47,7 @@ export default async function AboutPage() {
           </div>
         </div>
         <img
-          src="/craft.svg"
+          src="/craft.jpg"
           alt="کارگاه ساخت جواهرات زرّین"
           width={900}
           height={700}

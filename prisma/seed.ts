@@ -43,7 +43,7 @@ const products: SeedProduct[] = [
     weight: 4.2,
     featured: true,
     popularity: 96,
-    images: ["/products/necklace-drop.svg"],
+    images: ["/products/necklace-drop.jpg", "/products/necklace-drop-2.jpg"],
     short: "گردنبندی ظریف با آویز قطره‌ای، الهام‌گرفته از انعکاس ماه بر آب.",
     description:
       "گردنبند «مهتاب» با زنجیر باریک و آویز قطره‌ای، یکی از امضاهای کارگاه زرّین است. سطح آویز با دست صیقل خورده و انعکاس نور در آن به‌صورت طبیعی و نرم پخش می‌شود. مناسب استفاده روزمره و همچنین ست کردن با لباس‌های مجلسی.",
@@ -56,7 +56,7 @@ const products: SeedProduct[] = [
     weight: 2.8,
     isNew: true,
     popularity: 78,
-    images: ["/products/pendant-gold.svg"],
+    images: ["/products/pendant-gold.jpg"],
     short: "آویز مینیمال با فرم قطره و نگین مرکزی درخشان.",
     description:
       "آویز «قطره» با خطوط ساده و نگین مرکزی، انتخابی مناسب برای کسانی که زیبایی را در سکوت و ظرافت می‌جویند. قاب نگین با دقت ۰.۱ میلی‌متر تنظیم شده تا نگین در جای خود ثابت بماند.",
@@ -68,7 +68,7 @@ const products: SeedProduct[] = [
     category: "necklaces",
     weight: 6.5,
     popularity: 84,
-    images: ["/products/chain-layered.svg"],
+    images: ["/products/chain-layered.jpg", "/products/chain-layered-2.jpg"],
     short: "زنجیر چندلایه با بافت دستی و آویز مدالیون.",
     description:
       "گردنبند «نسیم» از سه زنجیر با ضخامت‌های متفاوت ساخته شده که در کنار هم عمق و حرکت ایجاد می‌کنند. بافت زنجیر به‌صورت دستی جوش داده شده و در برابر کشش مقاوم است.",
@@ -81,7 +81,7 @@ const products: SeedProduct[] = [
     weight: 3.4,
     featured: true,
     popularity: 91,
-    images: ["/products/ring-classic.svg"],
+    images: ["/products/ring-classic.jpg"],
     short: "انگشتر ساده و همیشگی با رینگ صیقلی و فرم ارگونومیک.",
     description:
       "انگشتر «کلاسیک» با سطح صیقلی آینه‌ای و لبه‌های گرد، راحتی کامل در استفاده طولانی‌مدت را فراهم می‌کند. این مدل در سایزهای مختلف و با امکان حکاکی نام عرضه می‌شود.",
@@ -103,7 +103,7 @@ const products: SeedProduct[] = [
     featured: true,
     isNew: true,
     popularity: 99,
-    images: ["/products/ring-diamond.svg", "/products/ring-classic.svg"],
+    images: ["/products/ring-diamond.jpg", "/products/ring-diamond-2.jpg"],
     short: "انگشتر سولیتر با نگین برلیان و رینگ سفید‌طلا.",
     description:
       "«درخشش» با نگین برلیان مرکزی و رینگ ظریف طراحی شده است. هر نگین با گواهی اصالت و مشخصات چهارگانه (رنگ، پاکی، تراش، قیراط) ارائه می‌شود. قاب نگین از نوع شش‌پایه است تا بیشترین بازتاب نور را داشته باشد.",
@@ -119,7 +119,7 @@ const products: SeedProduct[] = [
     category: "earrings",
     weight: 3.1,
     popularity: 88,
-    images: ["/products/earrings-teardrop.svg"],
+    images: ["/products/earrings-teardrop.jpg", "/products/earrings-teardrop-2.jpg"],
     short: "گوشواره آویز با فرم اشک و حرکت نرم.",
     description:
       "گوشواره «اشک» با وزنی متعادل طراحی شده تا هنگام حرکت، تاب نرم و دلنشینی داشته باشد. قفل گوشواره از نوع پیچی است و اطمینان کامل ایجاد می‌کند.",
@@ -132,7 +132,7 @@ const products: SeedProduct[] = [
     weight: 5.6,
     price: { discount: 8 },
     popularity: 82,
-    images: ["/products/bracelet-charm.svg"],
+    images: ["/products/bracelet-charm.jpg", "/products/bracelet-charm-2.jpg"],
     short: "دستبند با آویز گرد و قفل مغناطیسی ایمن.",
     description:
       "دستبند «طلسم» با آویز گرد و بافت صیقلی، ترکیبی از سادگی و جزئیات است. قفل مغناطیسی دوتایی، باز و بسته کردن آسان و ایمنی بالا را همزمان فراهم می‌کند.",
@@ -145,7 +145,7 @@ const products: SeedProduct[] = [
     purity: 21,
     weight: 8.4,
     popularity: 75,
-    images: ["/products/bangle-gold.svg"],
+    images: ["/products/bangle-gold.jpg"],
     short: "النگوی توپر با عیار ۲۱ و سطح براق.",
     description:
       "النگوی «مهر» از طلای ۲۱ عیار و به‌صورت توپر ساخته شده است؛ انتخابی سنتی با پرداخت مدرن. سطح بیرونی با برس‌کاری ریز و سطح داخلی صیقلی است تا روی پوست راحت باشد.",
@@ -159,7 +159,7 @@ const products: SeedProduct[] = [
     price: { making: 22, profit: 14 },
     featured: true,
     popularity: 93,
-    images: ["/products/necklace-drop.svg", "/products/chain-layered.svg"],
+    images: ["/products/necklace-drop-2.jpg", "/products/chain-layered-2.jpg"],
     short: "گردنبند عروس با نگین‌های ریز و طراحی باشکوه.",
     description:
       "گردنبند «نگین» برای روزهای خاص طراحی شده است. نگین‌های ریز در امتداد زنجیر، درخششی ملایم و پیوسته ایجاد می‌کنند. این مدل با ست گوشواره و دستبند هم‌خانواده نیز عرضه می‌شود.",
@@ -172,7 +172,7 @@ const products: SeedProduct[] = [
     weight: 1.9,
     isNew: true,
     popularity: 71,
-    images: ["/products/earrings-teardrop.svg"],
+    images: ["/products/earrings-minimal.jpg", "/products/minimalist-2.jpg"],
     short: "گوشواره سبک با خطوط ساده برای استفاده روزمره.",
     description:
       "گوشواره «خط» سبک‌ترین مدل مجموعه است؛ مناسب استفاده تمام‌روز و ست کردن با هر استایل. فرم هندسی ساده آن، تمرکز را روی درخشش طلا می‌گذارد.",
@@ -185,7 +185,7 @@ const products: SeedProduct[] = [
     weight: 2.2,
     stock: 0,
     popularity: 65,
-    images: ["/products/ring-classic.svg"],
+    images: ["/products/ring-minimal.jpg"],
     short: "انگشتر باریک و سبک با پرداخت مات.",
     description:
       "«هم‌آهنگ» انگشتری باریک با پرداخت مات است که برای ست کردن چند انگشتر در یک دست ایده‌آل است. سطح مات آن اثر انگشت را کمتر نشان می‌دهد.",
@@ -202,7 +202,7 @@ const products: SeedProduct[] = [
     weight: 4.8,
     price: { making: 20, profit: 13 },
     popularity: 90,
-    images: ["/products/bracelet-charm.svg"],
+    images: ["/products/bracelet-diamond.jpg", "/products/bracelet-charm-2.jpg"],
     short: "دستبند با نگین‌های الماس در امتداد بند.",
     description:
       "دستبند «ستاره» با نگین‌های الماس کوچک و چیدمان پیوسته، درخششی خطی و ظریف ایجاد می‌کند. قفل بند از نوع جعبه‌ای با ضامن ایمنی است.",
@@ -214,7 +214,7 @@ const products: SeedProduct[] = [
     category: "diamond",
     weight: 2.4,
     popularity: 80,
-    images: ["/products/pendant-gold.svg"],
+    images: ["/products/pendant-chain.jpg"],
     short: "آویز کوچک با نگین الماس و قاب طلا.",
     description:
       "آویز «شبنم» کوچک اما پرجزئیات است؛ نگین مرکزی در قابی از طلا نشسته و در نور کم هم می‌درخشد. زنجیر همراه آن جداگانه قابل انتخاب است.",
@@ -229,7 +229,7 @@ const products: SeedProduct[] = [
     price: { making: 25, profit: 15 },
     featured: true,
     popularity: 97,
-    images: ["/products/chain-layered.svg", "/products/necklace-drop.svg"],
+    images: ["/products/necklace-model.jpg", "/products/chain-layered.jpg"],
     short: "قطعه‌ای محدود از طلای ۲۴ عیار با طراحی اختصاصی.",
     description:
       "«شاهزاده» در تیراژ محدود و با طلای ۲۴ عیار ساخته می‌شود. هر قطعه شماره‌دار است و همراه با گواهی اصالت و جعبه چرمی اختصاصی ارسال می‌شود. طراحی این مدل در آرشیو کارگاه ثبت شده است.",
@@ -243,7 +243,7 @@ const products: SeedProduct[] = [
     price: { making: 24, profit: 14 },
     isNew: true,
     popularity: 89,
-    images: ["/products/ring-diamond.svg"],
+    images: ["/products/ring-wedding.jpg", "/products/ring-wedding-2.jpg"],
     short: "حلقه عروس با نگین مرکزی و رینگ دوگانه.",
     description:
       "حلقه «پیوند» با رینگ دوگانه و نگین مرکزی، نمادی از دو مسیر است که به هم می‌رسند. امکان حکاکی تاریخ و نام روی سطح داخلی وجود دارد.",
@@ -256,25 +256,25 @@ const products: SeedProduct[] = [
 ];
 
 const categories = [
-  { slug: "necklaces", name: "گردنبند طلا", description: "گردنبند و آویز با طراحی‌های ظریف و کلاسیک.", image: "/products/necklace-drop.svg", sortOrder: 1 },
-  { slug: "rings", name: "انگشتر طلا", description: "از انگشترهای ساده روزمره تا حلقه‌های خاص.", image: "/products/ring-classic.svg", sortOrder: 2 },
-  { slug: "earrings", name: "گوشواره طلا", description: "گوشواره‌های سبک و مجلسی با قفل ایمن.", image: "/products/earrings-teardrop.svg", sortOrder: 3 },
-  { slug: "bracelets", name: "دستبند و النگو", description: "دستبند، النگو و زنجیرهای مچ.", image: "/products/bracelet-charm.svg", sortOrder: 4 },
-  { slug: "wedding", name: "جواهرات عروس", description: "ست‌های عروس و حلقه‌های پیوند.", image: "/products/ring-diamond.svg", sortOrder: 5 },
-  { slug: "minimalist", name: "مینیمال", description: "طراحی‌های ساده، سبک و همیشه‌همراه.", image: "/products/earrings-teardrop.svg", sortOrder: 6 },
-  { slug: "diamond", name: "الماس", description: "نگین‌های الماس با گواهی اصالت.", image: "/products/ring-diamond.svg", sortOrder: 7 },
-  { slug: "special", name: "کالکشن ویژه", description: "قطعات محدود و سفارشی کارگاه زرّین.", image: "/products/chain-layered.svg", sortOrder: 8 },
+  { slug: "necklaces", name: "گردنبند طلا", description: "گردنبند و آویز با طراحی‌های ظریف و کلاسیک.", image: "/products/necklace-drop.jpg", sortOrder: 1 },
+  { slug: "rings", name: "انگشتر طلا", description: "از انگشترهای ساده روزمره تا حلقه‌های خاص.", image: "/products/ring-classic.jpg", sortOrder: 2 },
+  { slug: "earrings", name: "گوشواره طلا", description: "گوشواره‌های سبک و مجلسی با قفل ایمن.", image: "/products/earrings-teardrop.jpg", sortOrder: 3 },
+  { slug: "bracelets", name: "دستبند و النگو", description: "دستبند، النگو و زنجیرهای مچ.", image: "/products/bracelet-charm.jpg", sortOrder: 4 },
+  { slug: "wedding", name: "جواهرات عروس", description: "ست‌های عروس و حلقه‌های پیوند.", image: "/products/ring-wedding.jpg", sortOrder: 5 },
+  { slug: "minimalist", name: "مینیمال", description: "طراحی‌های ساده، سبک و همیشه‌همراه.", image: "/products/earrings-minimal.jpg", sortOrder: 6 },
+  { slug: "diamond", name: "الماس", description: "نگین‌های الماس با گواهی اصالت.", image: "/products/ring-diamond.jpg", sortOrder: 7 },
+  { slug: "special", name: "کالکشن ویژه", description: "قطعات محدود و سفارشی کارگاه زرّین.", image: "/products/chain-layered.jpg", sortOrder: 8 },
 ];
 
 const collections = [
-  { slug: "gold-necklaces", name: "گردنبندهای طلا", description: "خطوطی که گردن را قاب می‌گیرند.", image: "/products/necklace-drop.svg", sortOrder: 1 },
-  { slug: "gold-rings", name: "انگشترهای طلا", description: "حلقه‌هایی برای هر روز و هر مناسبت.", image: "/products/ring-classic.svg", sortOrder: 2 },
-  { slug: "gold-earrings", name: "گوشواره‌های طلا", description: "از مینیمال تا مجلسی.", image: "/products/earrings-teardrop.svg", sortOrder: 3 },
-  { slug: "gold-bracelets", name: "دستبندهای طلا", description: "جزئیاتی که در حرکت دیده می‌شوند.", image: "/products/bracelet-charm.svg", sortOrder: 4 },
-  { slug: "wedding", name: "جواهرات عروس", description: "برای روزی که به یاد می‌ماند.", image: "/products/ring-diamond.svg", sortOrder: 5 },
-  { slug: "minimalist", name: "مینیمالیست", description: "کمتر، اما دقیق‌تر.", image: "/products/pendant-gold.svg", sortOrder: 6 },
-  { slug: "diamond", name: "الماس", description: "درخشش ابدی.", image: "/products/ring-diamond.svg", sortOrder: 7 },
-  { slug: "special", name: "کالکشن ویژه", description: "قطعات محدود و شماره‌دار.", image: "/products/chain-layered.svg", sortOrder: 8 },
+  { slug: "gold-necklaces", name: "گردنبندهای طلا", description: "خطوطی که گردن را قاب می‌گیرند.", image: "/products/necklace-drop.jpg", sortOrder: 1 },
+  { slug: "gold-rings", name: "انگشترهای طلا", description: "حلقه‌هایی برای هر روز و هر مناسبت.", image: "/products/ring-classic.jpg", sortOrder: 2 },
+  { slug: "gold-earrings", name: "گوشواره‌های طلا", description: "از مینیمال تا مجلسی.", image: "/products/earrings-teardrop.jpg", sortOrder: 3 },
+  { slug: "gold-bracelets", name: "دستبندهای طلا", description: "جزئیاتی که در حرکت دیده می‌شوند.", image: "/products/bracelet-charm.jpg", sortOrder: 4 },
+  { slug: "wedding", name: "جواهرات عروس", description: "برای روزی که به یاد می‌ماند.", image: "/products/ring-wedding.jpg", sortOrder: 5 },
+  { slug: "minimalist", name: "مینیمالیست", description: "کمتر، اما دقیق‌تر.", image: "/products/pendant-gold.jpg", sortOrder: 6 },
+  { slug: "diamond", name: "الماس", description: "درخشش ابدی.", image: "/products/ring-diamond.jpg", sortOrder: 7 },
+  { slug: "special", name: "کالکشن ویژه", description: "قطعات محدود و شماره‌دار.", image: "/products/chain-layered.jpg", sortOrder: 8 },
 ];
 
 const collectionProducts: Record<string, string[]> = {
@@ -450,8 +450,8 @@ async function main() {
           advertiser: "گالری نگین",
           title: "نمایشگاه جواهرات نگین",
           description: "مجموعه‌ای از سنگ‌های رنگی و طراحی سفارشی — با مشاوره تخصصی رایگان.",
-          imageDesktop: "/ad-wide.svg",
-          imageMobile: "/ad-mobile.svg",
+          imageDesktop: "/ad-wide.jpg",
+          imageMobile: "/ad-mobile.jpg",
           targetUrl: "https://example.com/negin",
           placement: "HOME_MIDDLE",
           priority: 5,
@@ -461,8 +461,8 @@ async function main() {
           advertiser: "بیمه اطمینان",
           title: "بیمه جواهرات خانگی",
           description: "پوشش کامل جواهرات شما در منزل و سفر.",
-          imageDesktop: "/ad-wide-2.svg",
-          imageMobile: "/ad-mobile.svg",
+          imageDesktop: "/ad-wide-2.jpg",
+          imageMobile: "/ad-mobile.jpg",
           targetUrl: "https://example.com/insurance",
           placement: "SIDEBAR",
           priority: 2,
@@ -480,24 +480,43 @@ async function main() {
           title: "قیمت طلا چگونه محاسبه می‌شود؟",
           excerpt: "از نرخ روز طلا تا اجرت ساخت و مالیات؛ همه چیز درباره ریز قیمت یک قطعه طلا.",
           body: "قیمت نهایی هر قطعه طلا از جمع چند جزء تشکیل می‌شود: ارزش طلای خام (وزن ضرب‌در نرخ روز گرم)، اجرت ساخت، سود فروشنده و مالیات بر ارزش افزوده.\n\nارزش طلای خام بیشترین سهم را دارد و با نرخ روز بازار تغییر می‌کند. اجرت ساخت بسته به پیچیدگی طراحی متفاوت است و در قطعات دست‌ساز بیشتر می‌شود.\n\nدر زرّین همه این اجزا به‌صورت شفاف در صفحه هر محصول نمایش داده می‌شود تا بدانید برای چه چیزی پرداخت می‌کنید.",
-          cover: "/blog-1.svg",
+          cover: "/blog-1.jpg",
         },
         {
           slug: "gold-purity-guide",
           title: "عیار طلا: ۱۸، ۲۱ یا ۲۴؟",
           excerpt: "تفاوت عیارها در رنگ، استحکام و کاربرد روزمره.",
           body: "عیار نشان‌دهنده درصد طلای خالص در آلیاژ است. طلای ۲۴ عیار خالص‌ترین است اما نرم و برای استفاده روزمره حساس است.\n\nطلای ۱۸ عیار ترکیبی متعادل از درخشش و استحکام است و برای انگشتر و دستبند انتخاب مناسبی است. طلای ۲۱ عیار رنگ گرم‌تری دارد و در بازار ایران محبوب است.",
-          cover: "/blog-2.svg",
+          cover: "/blog-2.jpg",
         },
         {
           slug: "jewelry-care",
           title: "نگهداری از جواهرات در خانه",
           excerpt: "چند عادت ساده که درخشش طلا را سال‌ها حفظ می‌کند.",
           body: "جواهرات را جدا از هم نگه دارید تا خط نیفتند. هنگام شنا، ورزش و استفاده از مواد شوینده آن‌ها را کنار بگذارید.\n\nبرای تمیز کردن، از آب گرم و صابون ملایم و یک برس نرم استفاده کنید و سپس با پارچه نخی خشک کنید. از مواد شیمیایی خشن پرهیز کنید.",
-          cover: "/blog-3.svg",
+          cover: "/blog-3.jpg",
         },
       ],
     });
+  }
+
+  // Demo ads/blog covers were originally illustrations. Rewrite those exact
+  // legacy paths once so existing databases pick up the photography set.
+  const legacyAdImages = [
+    ["/ad-wide.svg", "/ad-wide.jpg"],
+    ["/ad-wide-2.svg", "/ad-wide-2.jpg"],
+    ["/ad-mobile.svg", "/ad-mobile.jpg"],
+  ];
+  for (const [from, to] of legacyAdImages) {
+    await prisma.ad.updateMany({ where: { imageDesktop: from }, data: { imageDesktop: to } });
+    await prisma.ad.updateMany({ where: { imageMobile: from }, data: { imageMobile: to } });
+  }
+  for (const [from, to] of [
+    ["/blog-1.svg", "/blog-1.jpg"],
+    ["/blog-2.svg", "/blog-2.jpg"],
+    ["/blog-3.svg", "/blog-3.jpg"],
+  ]) {
+    await prisma.blogPost.updateMany({ where: { cover: from }, data: { cover: to } });
   }
 
   if ((await prisma.review.count()) === 0) {

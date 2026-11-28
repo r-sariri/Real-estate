@@ -36,7 +36,7 @@ export default async function BlogPage() {
             <article key={post.slug} className="group overflow-hidden rounded-[1.75rem] border border-line bg-white/70 transition-all hover:-translate-y-1 hover:shadow-lift">
               <Link href={`/blog/${post.slug}`} className="block">
                 <img
-                  src={post.cover ?? "/blog-1.svg"}
+                  src={post.cover ?? "/blog-1.jpg"}
                   alt={post.title}
                   width={800}
                   height={500}

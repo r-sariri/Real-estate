@@ -21,17 +21,17 @@ export function ProductCard({
   const lowStock = product.inStock && product.stock <= 3;
 
   return (
-    <article className="group relative flex flex-col overflow-hidden rounded-[1.75rem] border border-line/80 bg-white p-2.5 transition-all duration-500 hover:-translate-y-1 hover:border-gold/40 hover:shadow-lift">
-      <div className="relative aspect-square overflow-hidden rounded-[1.35rem] bg-gradient-to-br from-cream to-ice/60">
+    <article className="group relative flex flex-col overflow-hidden rounded-[1.75rem] border border-silver/70 bg-white/70 p-2.5 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:border-gold/50 hover:bg-white/90 hover:shadow-lift">
+      <div className="relative aspect-square overflow-hidden rounded-[1.35rem] bg-gradient-to-br from-white via-cream to-ice/70">
         <Link href={`/product/${product.slug}`} className="block h-full w-full" aria-label={product.name}>
           <img
-            src={product.images[0] ?? "/hero.svg"}
+            src={product.images[0] ?? "/hero.jpg"}
             alt={`${product.name} — ${formatPurity(product.purity)}، ${formatWeight(product.weightGrams)}`}
             width={600}
             height={600}
             loading="lazy"
             decoding="async"
-            className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.06]"
+            className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.07]"
           />
           {product.images[1] ? (
             <img
@@ -66,6 +66,11 @@ export function ProductCard({
             <QuickView product={product} />
           </div>
         </div>
+
+        <span
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-[linear-gradient(125deg,rgba(255,255,255,.55)_0%,transparent_38%,transparent_62%,rgba(169,220,221,.35)_100%)] opacity-0 transition-opacity duration-700 group-hover:opacity-100"
+        />
 
         <div className="absolute inset-x-2.5 bottom-2.5 flex justify-end">
           <AddToCart product={product} compact />
@@ -116,11 +121,11 @@ export function CollectionCard({
   return (
     <Link
       href={`/collections/${collection.slug}`}
-      className="group relative flex flex-col overflow-hidden rounded-[1.75rem] border border-line/80 bg-white p-2.5 transition-all duration-500 hover:-translate-y-1 hover:border-gold/40 hover:shadow-lift"
+      className="group relative flex flex-col overflow-hidden rounded-[1.75rem] border border-silver/70 bg-white/70 p-2.5 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:border-gold/50 hover:bg-white/90 hover:shadow-lift"
     >
-      <div className="relative aspect-[4/3] overflow-hidden rounded-[1.35rem] bg-cream">
+      <div className="relative aspect-[4/3] overflow-hidden rounded-[1.35rem] bg-gradient-to-br from-white via-cream to-ice/70">
         <img
-          src={collection.image ?? "/hero.svg"}
+          src={collection.image ?? "/hero.jpg"}
           alt={collection.name}
           width={800}
           height={600}

@@ -84,12 +84,12 @@ export function HeaderShell({ brandName, brandLatin, announcement, userName, isA
 
       <header
         className={`sticky top-0 z-40 transition-all duration-300 ${
-          scrolled ? "border-b border-line/80 bg-pearl/85 shadow-[0_10px_30px_-24px_rgba(29,27,24,.6)] backdrop-blur-xl" : "bg-pearl/60 backdrop-blur-sm"
+          scrolled ? "border-b border-silver/60 bg-pearl/85 shadow-[0_10px_30px_-26px_rgba(18,38,43,.55)] backdrop-blur-xl" : "bg-pearl/50 backdrop-blur-sm"
         }`}
       >
         <div className="container-lux flex h-16 items-center justify-between gap-3 lg:h-20">
           <Link href="/" className="group flex shrink-0 items-center gap-2.5" aria-label={`${brandName} — صفحه اصلی`}>
-            <span className="grid size-9 place-items-center rounded-full border border-gold/40 bg-gradient-to-br from-white to-gold-soft text-gold-deep transition-transform duration-500 group-hover:rotate-[18deg]">
+            <span className="iridescent grid size-9 place-items-center rounded-full border border-white/80 text-gold-deep shadow-soft transition-transform duration-500 group-hover:rotate-[18deg]">
               <Icon name="diamond" size={18} />
             </span>
             <span className="flex flex-col leading-none">
@@ -125,7 +125,7 @@ export function HeaderShell({ brandName, brandLatin, announcement, userName, isA
             <button
               type="button"
               onClick={() => setSearchOpen(true)}
-              className="grid size-10 place-items-center rounded-full text-ink-soft transition-colors hover:bg-white hover:text-gold-deep"
+              className="grid size-10 place-items-center rounded-full text-ink-soft transition-colors hover:bg-cream hover:text-gold-deep"
               aria-label="جستجو در محصولات"
             >
               <Icon name="search" size={19} />
@@ -133,7 +133,7 @@ export function HeaderShell({ brandName, brandLatin, announcement, userName, isA
 
             <Link
               href={userName ? "/account" : "/login"}
-              className="hidden size-10 place-items-center rounded-full text-ink-soft transition-colors hover:bg-white hover:text-gold-deep sm:grid"
+              className="hidden size-10 place-items-center rounded-full text-ink-soft transition-colors hover:bg-cream hover:text-gold-deep sm:grid"
               aria-label={userName ? `حساب کاربری ${userName}` : "ورود به حساب"}
             >
               <Icon name="user" size={19} />
@@ -141,7 +141,7 @@ export function HeaderShell({ brandName, brandLatin, announcement, userName, isA
 
             <Link
               href="/account/wishlist"
-              className="relative hidden size-10 place-items-center rounded-full text-ink-soft transition-colors hover:bg-white hover:text-gold-deep sm:grid"
+              className="relative hidden size-10 place-items-center rounded-full text-ink-soft transition-colors hover:bg-cream hover:text-gold-deep sm:grid"
               aria-label={`علاقه‌مندی‌ها${wishlistCount ? ` — ${wishlistCount} مورد` : ""}`}
             >
               <Icon name="heart" size={19} />
@@ -150,7 +150,7 @@ export function HeaderShell({ brandName, brandLatin, announcement, userName, isA
 
             <Link
               href="/cart"
-              className="relative grid size-10 place-items-center rounded-full text-ink-soft transition-colors hover:bg-white hover:text-gold-deep"
+              className="relative grid size-10 place-items-center rounded-full text-ink-soft transition-colors hover:bg-cream hover:text-gold-deep"
               aria-label={`سبد خرید${cartCount ? ` — ${cartCount} کالا` : ""}`}
             >
               <Icon name="cart" size={19} />
@@ -160,7 +160,7 @@ export function HeaderShell({ brandName, brandLatin, announcement, userName, isA
             <button
               type="button"
               onClick={() => setMenuOpen(true)}
-              className="grid size-10 place-items-center rounded-full text-ink-soft transition-colors hover:bg-white hover:text-gold-deep lg:hidden"
+              className="grid size-10 place-items-center rounded-full text-ink-soft transition-colors hover:bg-cream hover:text-gold-deep lg:hidden"
               aria-label="باز کردن منو"
               aria-expanded={menuOpen}
             >
@@ -198,7 +198,7 @@ export function HeaderShell({ brandName, brandLatin, announcement, userName, isA
               <Link
                 key={item.href}
                 href={item.href}
-                className="flex items-center justify-between rounded-2xl px-4 py-3 text-sm text-ink-soft hover:bg-white hover:text-gold-deep"
+                className="flex items-center justify-between rounded-2xl px-4 py-3 text-sm text-ink-soft hover:bg-cream hover:text-gold-deep"
               >
                 {item.label}
                 <Icon name="chevronLeft" size={16} className="opacity-40" />
