@@ -2,7 +2,7 @@
   padding: clamp(16px, 2vw, 22px);
   border: 1px solid var(--line);
   border-radius: var(--r-lg);
-  background: var(--white);
+  background: var(--surface);
   box-shadow: var(--shadow-panel);
 }
 
@@ -30,8 +30,8 @@
 }
 
 .filters__search:focus-within {
-  border-color: var(--navy);
-  background: var(--white);
+  border-color: var(--ink);
+  background: var(--surface);
   box-shadow: 0 0 0 3px rgba(197, 160, 114, 0.28);
 }
 

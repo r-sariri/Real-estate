@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Icon, LogoMark } from '../ui/Icon';
 import { CONTACT, NAV_ITEMS } from './nav';
+import { ThemeToggle } from './ThemeToggle';
 import './Header.css';
 
 export function Header() {
@@ -66,6 +67,7 @@ export function Header() {
           </nav>
 
           <div className="site-header__actions">
+            <ThemeToggle />
             <a className="phone-pill" href={CONTACT.phoneHref}>
               <Icon name="phone" size={15} strokeWidth={1.6} />
               <span dir="ltr">{CONTACT.phone}</span>

@@ -35,7 +35,7 @@
   padding: clamp(20px, 2.4vw, 28px);
   border: 1px solid var(--line);
   border-radius: var(--r-lg);
-  background: var(--white);
+  background: var(--surface);
 }
 
 .contact-card__title {
@@ -121,7 +121,7 @@
   font-style: italic;
   font-size: 1.1rem;
   line-height: 1.6;
-  color: var(--navy-700);
+  color: var(--ink);
 }
 
 .contact-card__attribution {

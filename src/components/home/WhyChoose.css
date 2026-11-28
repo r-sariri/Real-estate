@@ -14,7 +14,7 @@
 .why__figure {
   overflow: hidden;
   border-radius: var(--r-lg);
-  background: var(--white);
+  background: var(--surface);
 }
 
 .why__figure img {
@@ -59,7 +59,7 @@
   font-style: italic;
   font-size: clamp(1.1rem, 1.5vw, 1.35rem);
   line-height: 1.55;
-  color: var(--navy-700);
+  color: var(--ink);
 }
 
 .why__list {
@@ -125,7 +125,7 @@
   font-weight: 600;
   letter-spacing: -0.035em;
   line-height: 1;
-  color: var(--navy);
+  color: var(--ink);
 }
 
 .why__stat-label {

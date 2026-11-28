@@ -21,7 +21,7 @@
 }
 
 .site-header.is-solid {
-  background: rgba(249, 248, 246, 0.9);
+  background: var(--header-bg);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
   backdrop-filter: blur(16px) saturate(140%);
   color: var(--ink);

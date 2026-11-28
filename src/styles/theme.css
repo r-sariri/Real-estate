@@ -1,0 +1,40 @@
+/* ==========================================================================
+   Light / dark theme
+   The active theme lives on <html data-theme="dark"> — set before the first
+   paint by the script in index.html and afterwards by the header toggle.
+   Everything else keeps reading the tokens from base.css.
+   ========================================================================== */
+
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --navy-950: #060b11;
+  --navy: #0f1a24;
+  --navy-800: #16232f;
+  --navy-700: #1e2f3d;
+  --ivory: #080e15;
+  --sand: #111c27;
+  --mist: #0f1922;
+  --surface: #111c27;
+
+  --ink: #eef2f6;
+  --muted: #9aa6b4;
+  --muted-soft: #7c8794;
+
+  --line: rgba(255, 255, 255, 0.12);
+  --line-strong: rgba(255, 255, 255, 0.26);
+  --header-bg: rgba(8, 14, 21, 0.9);
+  --bar-bg: rgba(8, 14, 21, 0.96);
+
+  --shadow-soft: 0 24px 60px -38px rgba(0, 0, 0, 0.9);
+  --shadow-lift: 0 40px 80px -46px rgba(0, 0, 0, 0.9);
+  --shadow-panel: 0 30px 70px -50px rgba(0, 0, 0, 0.9);
+}
+
+/* The navy primary button would sink into the dark page — a hairline keeps
+   its edge without changing the brand colour. */
+[data-theme='dark'] .btn--primary {
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.14),
+    0 14px 30px -24px rgba(0, 0, 0, 0.95);
+}

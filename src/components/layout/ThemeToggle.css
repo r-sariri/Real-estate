@@ -1,0 +1,25 @@
+.theme-toggle {
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 50%;
+  color: inherit;
+  transition:
+    background-color 0.35s var(--ease),
+    border-color 0.35s var(--ease),
+    color 0.35s var(--ease);
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.is-solid .theme-toggle {
+  border-color: var(--line-strong);
+}
+
+.is-solid .theme-toggle:hover {
+  background: var(--sand);
+}

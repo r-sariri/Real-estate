@@ -98,7 +98,7 @@
   padding: clamp(48px, 7vw, 88px) 1.5rem;
   border: 1px solid var(--line);
   border-radius: var(--r-lg);
-  background: var(--white);
+  background: var(--surface);
   text-align: center;
 }
 
@@ -109,7 +109,7 @@
   height: 56px;
   border-radius: 50%;
   background: var(--sand);
-  color: var(--navy);
+  color: var(--ink);
 }
 
 .properties-empty__title {

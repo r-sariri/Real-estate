@@ -26,7 +26,9 @@ export type IconName =
   | 'sliders'
   | 'compass'
   | 'tag'
-  | 'megaphone';
+  | 'megaphone'
+  | 'sun'
+  | 'moon';
 
 const paths: Record<IconName, React.ReactNode> = {
   'arrow-right': <path d="M5 12h14M13 6l6 6-6 6" />,
@@ -126,6 +128,13 @@ const paths: Record<IconName, React.ReactNode> = {
       <path d="M14 8.5a5 5 0 0 1 0 7M17 5.5a9 9 0 0 1 0 13" />
     </>
   ),
+  sun: (
+    <>
+      <circle cx="12" cy="12" r="4.2" />
+      <path d="M12 2.6v2.1M12 19.3v2.1M2.6 12h2.1M19.3 12h2.1M5.4 5.4l1.5 1.5M17.1 17.1l1.5 1.5M18.6 5.4l-1.5 1.5M6.9 17.1l-1.5 1.5" />
+    </>
+  ),
+  moon: <path d="M20.6 14.4A8.7 8.7 0 0 1 9.6 3.4a8.7 8.7 0 1 0 11 11Z" />,
 };
 
 type IconProps = SVGProps<SVGSVGElement> & {
